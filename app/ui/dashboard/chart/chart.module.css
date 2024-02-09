@@ -1,0 +1,21 @@
+.container{
+    height: 450px;
+    background: var(--bgSoft);
+    padding: 20px;
+    border-radius: 10px;
+
+}
+.title{
+    font-weight: 200;
+    color:var(--text);
+    margin-bottom: 20px;
+    
+}
+@media only screen and (max-width: 768px){
+    .recharts-surface {
+        display: none !important;
+    }
+    .container svg{
+        width: 310px !important;
+    }
+}

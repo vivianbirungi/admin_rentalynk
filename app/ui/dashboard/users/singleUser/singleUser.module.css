@@ -1,0 +1,239 @@
+.container {
+   display: flex;
+   flex-direction: column;
+   gap:30px;
+    margin-top: 20px;
+  }
+  
+  .infoContainer {
+    width:800px;
+    background-color: var(--bgSoft);
+    display: flex;
+    padding: 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    color: var(--textSoft);
+    height: max-content;
+  }
+  
+  .imgContainer{
+    flex:1;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+
+  }
+  .imgContainer > img {
+    border-radius: 50%;
+  }
+  .userDetail{
+    flex:2;
+  }
+  .header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+  }
+  .header :first-child{
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  .header :last-child{
+    background: rgb(15,157,158);
+background: linear-gradient(40deg, rgba(15,157,158,1) 40%, rgba(0,255,201,1) 48%, rgba(255,255,255,1) 94%);
+    color: var(--text); ;
+    border-radius: 10px;
+    padding:10px;
+  }
+  .userInfo{
+    display: flex;
+    flex-direction: column;
+    gap:25px;
+  }
+  .userInfo div{
+    display: flex;
+    gap:10px;
+  }
+  
+  .userInfo div :last-child{
+    font-weight: bold;
+    color:rgb(93, 93, 93);
+  }
+  .formContainer {
+    flex: 1;
+    display: flex;
+    background-color: var(--bgSoft);
+    padding: 20px;
+    border-radius: 10px;
+    color: rgb(45, 40, 40);
+    gap:20px
+  }
+  .propertyContainer{
+    background-color: white;
+    flex:1;
+    border-radius: 10px;
+    padding:20px;
+    
+  }
+  .tendanciesContainer{
+    background-color: white;
+    border-radius: 10px;
+    flex:1;
+    padding:20px;
+
+
+  }
+ /* Table.module.css */
+
+.table {
+  margin-top: 30px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  padding: 28px;
+  text-align: left;
+}
+
+/* Add your custom styles for table rows here */
+.table tr {
+  background-color: #f5f5f5;
+  margin-bottom: 100px;
+  
+}
+
+/* Styling for alternating rows */
+.table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+.table tr:hover{
+  box-shadow: 6px 4px 10px -2px rgb(50, 50, 50);
+
+}
+
+/* Add more styles as needed */
+
+  .user{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .userImage{
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .buttons{
+    display: flex;
+    gap: 10px;
+  }
+  
+  .button{
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: var(--text);
+    border: none;
+    cursor: pointer;
+  }
+  
+  .view{
+    background-color: teal;
+  }
+  
+  .delete{
+    background-color: crimson;
+  }
+  .tabcontainer{
+    width:100%;
+}
+.tabHeader{
+    display: flex;
+    width:max-content;
+    background-color: var(--textSoft);
+    align-items: center;
+    
+    justify-content: center;
+    margin:0 auto;
+    border-radius: 25px;
+    padding: 5px;
+
+}
+.tabbutton{
+    background: transparent;
+    border:none;
+    padding:10px;
+    border-radius: 20px;
+}
+.tabactive{
+    background: white;
+
+}
+.tabbody{
+  padding-top: 50px;
+}
+.muted_text{
+  color: var(--textSoft);
+  font-size: 14px;
+}
+.tendanciesContainer{
+  background-color: transparent !important;
+  display: flex;
+
+}
+.bookings{
+  width:50%;
+}
+.booking{
+    display: flex;
+    margin-bottom: 15px;
+    padding: 8px;
+    width: 100%;
+    list-style: none;
+    background-color: white;
+    color:black;
+    border-radius: 10px;
+    justify-content: space-between;
+    padding-left:20px;
+}
+.booking_details{
+  display:flex;
+  flex-direction: column;
+  gap:8px;
+  
+}
+.booking_status{
+  text-align: end;
+}
+
+  /* 
+  .form{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form input, .form textarea, .form select{
+    padding: 20px;
+    border: 2px solid #2e374a;
+    border-radius: 5px;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 10px 0px;
+  }
+  
+  .form label{
+    font-size: 12px;
+  }
+  
+  .form button{
+    width: 100%;
+    padding: 20px;
+    background-color: teal;
+    color: var(--text);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  } */

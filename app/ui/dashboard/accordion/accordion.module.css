@@ -1,0 +1,15 @@
+.accordion{
+    background-color: #182237;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.accordionHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0 10px 0;
+    cursor: pointer;
+    border: 2px solid var(--bgsoft);
+    background-color: transparent;
+}

@@ -1,0 +1,140 @@
+.container{
+    background-color: var(--bgSoft);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  
+  .top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .addButton{
+    padding: 10px;
+    background-color: #5d57c9;
+    color: var(--text);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .table{
+    width: 100%;
+  }
+  
+  .table td{
+    padding: 10px;
+  }
+  
+  .product{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .productImage{
+    width: 100% !important;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  
+  .buttons{
+    display: flex;
+    gap: 10px;
+  }
+  
+  .button{
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: var(--text);
+    border: none;
+    cursor: pointer;
+  }
+  
+  .view{
+    background-color: teal;
+  }
+  
+  .delete{
+    background-color: crimson;
+  }
+  .propertyContainer{
+    display: flex;
+    flex-direction: column;
+    padding:10px;
+    margin-top: 10px;
+    background-color: #2e374a;
+    border-radius:20px;
+   
+  }
+  .content{
+    flex:3;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    padding: 20px 0 20px 0;
+  }
+  .header{
+     font-size: 20px;
+    font-weight: bold;
+  }
+  .status{
+    background-color: rgba(0, 128, 0, 0.689);
+    padding: 5px;
+    border-radius: 20px;
+    font-size: 12px;
+  }
+  .action{
+    flex:1;
+    display: flex;
+    justify-content:center;
+    gap:10px;
+    padding-top: 20px;
+    width: 100%;
+  }
+  .owner, .type{
+    font-size: 15px;
+    font-weight: bold;
+    width: max-content;
+    text-transform: capitalize;
+  }
+  
+  .productDetail{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    
+  }
+  .list{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 5px;
+  }
+  .price{
+    font-weight: normal;
+    font-size: 15px;
+  }
+  .list li{
+    font-size: 14px;
+
+  }
+  .properties{
+      display: flex;
+      gap:10px;
+      flex-wrap: wrap; 
+  }
+  .properties .single{
+    width: 32.6%;
+  }
+  @media only screen and (max-width: 900px){
+    .properties{
+      
+      flex-direction: column; 
+  }
+    .properties .single{
+      width: 98%;
+    }
+  }
+  

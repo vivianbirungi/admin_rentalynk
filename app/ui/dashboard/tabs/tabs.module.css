@@ -1,0 +1,25 @@
+.tabcontainer{
+    width:100%;
+}
+.tabHeader{
+    display: flex;
+    width:max-content;
+    background-color: var(--textSoft);
+    align-items: center;
+    
+    justify-content: center;
+    margin:0 auto;
+    border-radius: 25px;
+    padding: 5px;
+
+}
+.tabbutton{
+    background: transparent;
+    border:none;
+    padding:10px;
+    border-radius: 20px;
+}
+.tabactive{
+    background: white;
+
+}
