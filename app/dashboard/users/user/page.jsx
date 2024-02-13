@@ -9,7 +9,7 @@ import styles from "../../../ui/dashboard/users/singleUser/singleUser.module.css
 const SingleUserPage =  () => {
 const {activeUser, properties, } =useRLStore(state => state);
 // useEffect(()=>{getActiveUser})
-const myProperties = properties.filter(property => property.landlord_id === activeUser.user_id);
+const myProperties = properties.filter(property => property?.landlord_id === activeUser?.user_id);
 const [currentPage, setCurrentPage] = useState(1);
 const [activeTab, setActiveTab] =useState('properties');
 const [subscriptions, setSubscriptions] = useState([])
@@ -18,12 +18,12 @@ const start = (Number(currentPage)-1) * 10;
 const end = start + 10;
 const entries = myProperties.slice(start, end);
 const get_subscription= async()=>{
-   const subscriptions = await instance.get(`get_subscriptions/${activeUser.user_id}`);
+   const subscriptions = await instance.get(`get_subscriptions/${activeUser?.user_id}`);
    console.log(subscriptions)
    setSubscriptions(subscriptions.data.results)
 }
 const getUserbooking = async()=>{
-  const response = await instance.get(`get_user_bookings/${activeUser.user_id}`);
+  const response = await instance.get(`get_user_bookings/${activeUser?.user_id}`);
   console.log(response);
   setBookings(response.data.results);
 }
@@ -32,7 +32,7 @@ const handlePagination =(e) => {
   
 }
 useEffect(()=>{
-  if(activeUser.user_type == 'landlord') get_subscription();
+  if(activeUser?.user_type == 'landlord') get_subscription();
   else getUserbooking();
 },[])
 console.log({myProperties});

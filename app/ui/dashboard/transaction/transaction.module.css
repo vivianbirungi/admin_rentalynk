@@ -15,6 +15,11 @@
 .table td{
     padding: 10px;
 }
+.table tr:hover{
+    box-shadow: 6px 4px 10px -2px rgb(122, 121, 121);
+  
+  }
+
 .user{
     display: flex;
     gap:10px;
@@ -30,14 +35,14 @@
     font-size: 14px;
     color:white;
 }
-.pending{
-    background: #f7cb7375;
+.cancelled{
+    color: #fc5a1a75;
 }
 .done{
-    background: #afd6ee75;
+    color: #dde3e675;
 }
 .pending{
-    background: #f7737375;
+    color: #f8f7f775;
 }
 @media only screen and (max-width: 768px) {
     

@@ -22,7 +22,7 @@ const Products = () => {
   const handlePagination = (e) => {
     setCurrentPage(e);
   };
-
+console.log({properties})
   useEffect(() => {
     getProperties();
   }, []);

@@ -1,70 +1,35 @@
 "use client"
-import { Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
-import styles from './chart.module.css';
-const Chart = () => {
-  const data = [
-    {
-      name: "Sun",
-      visit: 4000,
-      click: 2400,
-    },
-    {
-      name: "Mon",
-      visit: 3000,
-      click: 1398,
-    },
-    {
-      name: "Tue",
-      visit: 2000,
-      click: 3800,
-    },
-    {
-      name: "Wed",
-      visit: 2780,
-      click: 3908,
-    },
-    {
-      name: "Thu",
-      visit: 1890,
-      click: 4800,
-    },
-    {
-      name: "Fri",
-      visit: 2390,
-      click: 3800,
-    },
-    {
-      name: "Sat",
-      visit: 3490,
-      click: 4300,
-    },
-  ];
-  return (
-    <div className={styles.container}>
-      <h2 className={styles.title}>Weekly Report</h2>
-      <ResponsiveContainer width="90%" height="100%">
-        <LineChart
-          width={500}
-          height={300}
-          data={data}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-        >
-         
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip contentStyle={{background:'#151c2c', border:'none'}}/>
-          <Legend />
-          <Line type="monotone" dataKey="visit" stroke="#8884d8" strokeDasharray="5 5" />
-          <Line type="monotone" dataKey="click" stroke="#82ca9d" strokeDasharray="3 4 5 2" />
-        </LineChart>
-      </ResponsiveContainer>
-    </div>
-  )
-}
+import { Cell, Legend, Pie, PieChart, Tooltip } from 'recharts';
 
-export default Chart
+const data = [
+  { name: 'Category A', value: 30 },
+  { name: 'Category B', value: 25 },
+  { name: 'Category C', value: 45 },
+];
+
+const COLORS = ['#0088FE', '#00C49F', '#FFBB28'];
+
+const Chart = () => {
+  return (
+    <PieChart width={150} height={150}>
+      <Pie
+        data={data}
+        cx={75}
+        cy={75}
+        innerRadius={30}
+        outerRadius={40}
+        fill="#8884d8"
+        paddingAngle={5}
+        dataKey="value"
+      >
+        {data.map((entry, index) => (
+          <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+        ))}
+      </Pie>
+      <Tooltip />
+      <Legend />
+    </PieChart>
+  );
+};
+
+export default Chart;

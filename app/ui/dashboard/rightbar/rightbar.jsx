@@ -1,8 +1,12 @@
-import React from 'react'
-import styles from './rightbar.module.css'
-import Image from 'next/image'
-import { MdPlayCircleFilled, MdReadMore } from "react-icons/md";
+"use client"
+import Image from 'next/image';
+import { useState } from 'react';
+import { AiOutlineStop } from 'react-icons/ai';
+import { MdOutlineAutoAwesome, MdOutlineHourglassEmpty } from "react-icons/md";
+import styles from './rightbar.module.css';
+import AddNotification from '../notification/add/addNotification';
 const Rightbar = () => {
+  
   return (
     <div className={styles.container}>
       <div className={styles.item}>
@@ -11,33 +15,25 @@ const Rightbar = () => {
 
         </div>
         <div className={styles.texts}>
-          <span className={styles.notification}>🔥 Available Now</span>
-          <h3 className={styles.title}>How to use the new version of admin dashboard</h3>
-          <span className={styles.subtitle}>Takes 4 minutes to learn</span>
+          <div className={styles.bookings}>
+          <h4 className={styles.title}>🔥 Available Bookings</h4>
+          <div className={styles.bookingItem}><MdOutlineAutoAwesome size={24} color='green'/><span> Approved</span> <span>100</span></div>
+          <div className={styles.bookingItem}><MdOutlineHourglassEmpty size={24} color='#f7737375'/><span> Pending</span><span>100</span></div>
+          <div className={styles.bookingItem}><AiOutlineStop size={24} color='gray'/><span>Declined</span><span>100</span></div>
+          </div>
+          {/* <span className={styles.subtitle}>Takes 4 minutes to learn</span>
           <p className={styles.desc}> Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Reprehenderit eius libero perspiciatis recusandae possimus.</p>
-            <button className={styles.button}>
-            <MdPlayCircleFilled />
-            Watch
-          </button> 
+            Reprehenderit eius libero perspiciatis recusandae possimus.</p> */}
+            
         </div>
       </div>
       <div className={styles.item}>
         <div className={styles.text}>
-          <span className={styles.notification}>🚀 Coming Soon</span>
+          <span className={styles.notification}>🚀  Notify User</span>
           <h3 className={styles.title}>
-            New server actions are available, partial pre-rendering is coming
-            up!
+           Let the user Know
           </h3>
-          <span className={styles.subtitle}>Boost your productivity</span>
-          <p className={styles.desc}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Reprehenderit eius libero perspiciatis recusandae possimus.
-          </p>
-          <button className={styles.button}>
-            <MdReadMore />
-            Learn
-          </button>
+         <AddNotification/>
         </div>
       </div>
     </div>

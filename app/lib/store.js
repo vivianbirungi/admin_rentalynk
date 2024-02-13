@@ -15,6 +15,7 @@ const useRLStore = create(
 
       getProperties: async () => {
         const response = await instance.get('get_Properties');
+        // const sortedData = [...data].sort((a, b) => new Date(b.createdDate) - new Date(a.createdDate));
         set((state) => ({ ...state, properties: response.data.results }));
       },
 

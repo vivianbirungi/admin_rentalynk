@@ -9,11 +9,19 @@
     margin-bottom: 20px;
     position: relative;
   }
+  .bookingItem{
+    display:flex;
+    padding: 10px;
+    justify-content: space-between;
+    border-radius: 10px;
+    background-color: #182237;
+  }
+
   
   .bgContainer {
     position: absolute;
     right: 0;
-    bottom: 0;
+    top: 5;
     width: 50%;
     height: 50%;
   }
@@ -23,14 +31,17 @@
     opacity: 0.2;
   }
   
-  .text {
+  .bookings {
     display: flex;
+    gap:10px;
     flex-direction: column;
-    gap: 24px;
   }
+
   
   .notification {
     font-weight: bold;
+    color: red;
+    margin-bottom: 10px;
   }
   
   .subtitle {

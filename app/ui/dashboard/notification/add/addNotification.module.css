@@ -1,0 +1,17 @@
+.message{
+    border-radius: 10px;
+    background-color: var(--bg);
+}
+.button{
+    border-radius: 5px;
+    padding: 7px;
+}
+.formContainer{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.select_dropdown {
+    width: 100% !important;
+}

@@ -1,5 +1,5 @@
 .container{
-    height: 450px;
+    height: 50px;
     background: var(--bgSoft);
     padding: 20px;
     border-radius: 10px;
@@ -16,6 +16,6 @@
         display: none !important;
     }
     .container svg{
-        width: 310px !important;
+        width: 110px !important;
     }
 }
