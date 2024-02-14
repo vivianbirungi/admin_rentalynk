@@ -7,15 +7,15 @@ import Transaction from "../ui/dashboard/transaction/transaction"
 
 const Dashboard = () => {
   const { landLords, tenants, properties} = useRLStore( (state) => state)
-  console.log({landLords})
+  console.log({tenants})
   return (
     <div className={styles.wrapper}>
       <div className={styles.main}>
         
       <div className={styles.cards}>
-        <Card title='LandLords' numbers={tenants?.results?.length}/>
+        <Card title='LandLords' numbers={landLords?.results?.length}/>
         <Card title='Properties' numbers={properties?.length}/>
-        <Card title='Tenancies' numbers={landLords?.results?.length}/>
+        <Card title='Tenancies' numbers={tenants?.results?.length}/>
       </div>
       <Transaction/>
       {/* <Chart/> */}

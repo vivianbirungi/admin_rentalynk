@@ -1,12 +1,13 @@
 "use client"
+import useRLStore from '@/app/lib/store';
 import Image from 'next/image';
-import { useState } from 'react';
 import { AiOutlineStop } from 'react-icons/ai';
 import { MdOutlineAutoAwesome, MdOutlineHourglassEmpty } from "react-icons/md";
-import styles from './rightbar.module.css';
 import AddNotification from '../notification/add/addNotification';
+import styles from './rightbar.module.css';
 const Rightbar = () => {
-  
+  const {bookings} = useRLStore((state) => state);
+  console.log({bookings});
   return (
     <div className={styles.container}>
       <div className={styles.item}>
