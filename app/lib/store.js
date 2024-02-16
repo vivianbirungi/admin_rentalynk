@@ -29,7 +29,7 @@ const useRLStore = create(
       getLandlords: async () => {
         const results = await instance.get(`get_Users/landlord`);
        
-
+        console.log('i am here');
         set((state) => ({ ...state, landLords: results.data }));
       },
 

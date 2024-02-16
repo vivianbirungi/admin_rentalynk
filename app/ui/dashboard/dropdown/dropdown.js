@@ -33,12 +33,12 @@ const menuItems = [
       list: [
         {
           title: "Bookings",
-          path: "/dashboard/revenue",
+          path: "/dashboard/bookings",
           icon: <MdWork />,
         },
         {
           title: "Tenancies",
-          path: "/dashboard/reports",
+          path: "/dashboard/tenancies",
           icon: <MdAnalytics />,
         },
         // {

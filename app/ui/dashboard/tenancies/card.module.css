@@ -1,0 +1,48 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    padding:10px;
+    margin-top: 10px;
+    background-color: #2e374a;
+    position: relative;
+    border-radius:20px;
+}
+.image_container{
+ display: flex;
+ gap: 20px;
+}
+
+.image_container div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:5px;
+    flex-direction: column;
+}
+.overDue{
+    position:absolute;
+    top: 30;
+    left:0;
+    padding: 5px;
+    border-radius: 20px;
+    background-color: red;
+}
+.name{
+    font-size: 16px;
+    font-weight: bold;
+}
+.phone{
+    color:rgb(28, 178, 233);
+    font-size: 14px;
+
+}
+.email{
+    font-size: 13px;
+
+}
+.isverified{
+    color:rgb(28, 178, 233);
+}
+.notVerified{
+    color:red;
+}

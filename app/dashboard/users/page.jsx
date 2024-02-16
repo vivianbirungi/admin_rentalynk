@@ -29,11 +29,7 @@ const UsersPage = () => {
     );
     setFilteredData(filtered);
   };
-  console.log({landLords});
-  console.log({tenants});
-  console.log({type})
-  console.log({entries})
-  console.log(filteredData)
+  
   const getUsers = ()=>{
     if(type === 'landlord'){ getLandlords();
     
@@ -78,6 +74,7 @@ const UsersPage = () => {
       <tr key={user.user_id}>
               <td>
                 <div className={styles.user}>
+        <span>{data.full_name}</span>
                 <Avatar size="48" name={user?.full_name} round={true} />
                   {user?.full_name}
                 </div>

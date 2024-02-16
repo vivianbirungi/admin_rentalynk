@@ -1,0 +1,51 @@
+/* Table.module.css */
+
+.table {
+    margin-top: 30px;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table th, .table td {
+    padding: 28px;
+    text-align: left;
+  }
+  
+  /* Add your custom styles for table rows here */
+  .table tr {
+    background-color: var(--bg);
+    color:#ffffff;
+    margin-bottom: 100px;
+    
+  }
+  
+  /* Styling for alternating rows */
+  .table tr:nth-child(even) {
+    background-color: var(--bgSoft);
+  }
+  .table tr:hover{
+    box-shadow: 6px 4px 10px -2px rgb(251, 250, 250);
+  
+  }
+  
+.button{
+    border-radius: 10px;
+    padding: 10px;
+} 
+.muted_text{
+    color: var(--textSoft);
+    font-size: 14px;
+    margin-top: 5px;
+}
+.pending{
+    color:gray
+}
+.declined{
+    color:red
+}
+.approved{
+    color: green
+}
+.propertyImage{
+    border-radius: 100%;
+}
