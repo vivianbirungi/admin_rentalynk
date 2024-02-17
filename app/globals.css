@@ -126,3 +126,12 @@ table tr:hover {
   background-color: var(--bg);
 }
 
+.loadingPage {
+  background-color: var(--bgSft);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
