@@ -118,12 +118,13 @@ table tr {
   background-color: var(--bgSoft);
   color:#ffffff;
   margin-bottom: 100px;
-  
+  cursor: pointer;  
 }
 
 /* Styling for alternating rows */
-table tr:hover {
-  background-color: var(--bg);
+tbody tr:hover {
+  opacity: .8;
+  cursor: pointer;
 }
 
 .loadingPage {
