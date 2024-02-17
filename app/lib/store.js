@@ -9,8 +9,11 @@ const useRLStore = create(
       tenants: [],
       landLords: [],
       subscriptions: [],
+      bookings: [],
+      tenancies: [],
       activeUser: null,
       activeProperty: null,
+      activeBooking:null,
       fetchingProfile: false,
 
       getProperties: async () => {
@@ -21,14 +24,13 @@ const useRLStore = create(
 
       getTenants: async () => {
         const results = await instance.get(`get_Users/tenant`);
-        
         set((state) => ({ ...state, tenants: results.data }));
       },
 
       getLandlords: async () => {
         const results = await instance.get(`get_Users/landlord`);
        
-
+        console.log('i am here');
         set((state) => ({ ...state, landLords: results.data }));
       },
 
@@ -37,6 +39,16 @@ const useRLStore = create(
        
         set((state) => ({ ...state, subscriptions: results.data.results }));
       },
+
+       getBookings: async () => {
+          const results = await instance.get('get_bookings');
+          console.log('vbnnn');
+          set((state) => ({ ...state, bookings: results.data.results}));
+       },
+        getTenancies: async () => {
+          const results = await instance.get('get_tenancies');
+          set((state)=>({...state, tenancies: results.data.results}))
+        },
      
       setActiveUser: (userId, userType) => {
         let user = null;

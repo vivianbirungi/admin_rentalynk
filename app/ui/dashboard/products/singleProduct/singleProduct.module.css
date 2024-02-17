@@ -9,7 +9,7 @@
    
     background-color: var(--bgSoft);
     padding: 20px;
-    border-radius: 10px;
+    border-radius: var(--borderRadius);
     font-weight: bold;
     color: var(--textSoft);
     display: flex;

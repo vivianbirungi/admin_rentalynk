@@ -3,9 +3,9 @@
   }
   
   .item {
-    background: linear-gradient(to top, #182237, #253352);
+    background: linear-gradient(to top, var(--bg),var(--bgSoft));
     padding: 20px 24px;
-    border-radius: 10px;
+    border-radius: var(--borderRadius);
     margin-bottom: 20px;
     position: relative;
   }
@@ -13,8 +13,8 @@
     display:flex;
     padding: 10px;
     justify-content: space-between;
-    border-radius: 10px;
-    background-color: #182237;
+    border-radius: var(--borderRadius);
+    background-color: var(--bg);
   }
 
   
@@ -66,4 +66,6 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    outline: none;
+    border: none;
   }

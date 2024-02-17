@@ -1,4 +1,5 @@
 "use client"
+import TimeAgo from 'react-timeago';
 import useRLStore from '../../../lib/store';
 import styles from './transaction.module.css';
 const Transaction = () => {
@@ -10,7 +11,7 @@ const Transaction = () => {
     <div className={styles.container}>
         <h2 className={styles.title}>Latest Transactions</h2>
        
-        <table className={styles.table}>
+        <table >
         <thead>
           <tr>
             <td className="hidden bold">Property</td>
@@ -28,7 +29,7 @@ const Transaction = () => {
              
               <td className="hidden">{subscription.amount}</td>
               <td className={`hidden ${subscription.payment_status == 'cancelled' ? styles.cancelled : styles.done}`}>{subscription.payment_status}</td>
-              <td className="hidden">{subscription.date_paid}</td>
+              <td className="hidden"><TimeAgo date={subscription.date_paid}/></td>
             </tr>
           ))}
         </tbody>
@@ -37,7 +38,7 @@ const Transaction = () => {
     <div className={styles.container}>
         <h2 className={styles.title}>Latest Properties</h2>
       
-        <table className={styles.table}>
+        <table >
            
             <tbody>
             {latest_properties.map(myProperty =>(<><tr className={styles.hr}>
@@ -53,7 +54,7 @@ const Transaction = () => {
       </td>
     )}
               <td>{myProperty?.pro_title}<br/><span className={styles.muted_text}>{myProperty?.total_units} units </span></td>
-              <td>{myProperty?.created_at}</td>
+              <td><TimeAgo date={myProperty?.created_at}/></td>
       </tr>
      </>))}
      </tbody>

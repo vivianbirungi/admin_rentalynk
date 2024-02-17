@@ -2,7 +2,7 @@
     height: 50px;
     background: var(--bgSoft);
     padding: 20px;
-    border-radius: 10px;
+    border-radius: var(--borderRadius);
 
 }
 .title{

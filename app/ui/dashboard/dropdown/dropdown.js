@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { MdAnalytics, MdAttachMoney, MdClose, MdDashboard, MdHelpCenter, MdMenuOpen, MdOutlineSettings, MdPeople, MdShoppingBag, MdSupervisedUserCircle, MdWork } from 'react-icons/md';
-import styles from './dropdown.module.css'; // Import the styles
+import { MdAnalytics, MdAttachMoney, MdClose, MdDashboard, MdMenuOpen, MdShoppingBag, MdSupervisedUserCircle, MdWork } from 'react-icons/md';
 import MenuLink from '../sidebar/menuLink/menuLink';
+import styles from './dropdown.module.css'; // Import the styles
 const menuItems = [
     {
       title: "Pages",
@@ -28,26 +28,26 @@ const menuItems = [
         },
       ],
     },
-    // {
-    //   title: "Analytics",
-    //   list: [
-    //     {
-    //       title: "Revenue",
-    //       path: "/dashboard/revenue",
-    //       icon: <MdWork />,
-    //     },
-    //     {
-    //       title: "Reports",
-    //       path: "/dashboard/reports",
-    //       icon: <MdAnalytics />,
-    //     },
-    //     {
-    //       title: "Teams",
-    //       path: "/dashboard/teams",
-    //       icon: <MdPeople />,
-    //     },
-    //   ],
-    // },
+    {
+      title: "Analytics",
+      list: [
+        {
+          title: "Bookings",
+          path: "/dashboard/bookings",
+          icon: <MdWork />,
+        },
+        {
+          title: "Tenancies",
+          path: "/dashboard/tenancies",
+          icon: <MdAnalytics />,
+        },
+        // {
+        //   title: "Teams",
+        //   path: "/dashboard/teams",
+        //   icon: <MdPeople />,
+        // },
+      ],
+    },
     // {
     //   title: "User",
     //   list: [

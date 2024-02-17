@@ -2,9 +2,9 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    background-color: #2e374a;
+    background-color: var(--orange);
     padding: 10px;
-    border-radius: 10px;
+    border-radius: var(--borderRadius);
     width: max-content;
   }
   

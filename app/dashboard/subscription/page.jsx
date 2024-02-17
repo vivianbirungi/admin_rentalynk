@@ -1,12 +1,10 @@
 "use client";
 import { useEffect } from "react";
-import Image from "next/image";
-import Link from "next/link";
+import TimeAgo from 'react-timeago';
+import useRLStore from "../../lib/store";
 import Pagination from "../../ui/dashboard/pagination/pagination";
 import Search from "../../ui/dashboard/search/search";
 import styles from "../../ui/dashboard/users/users.module.css";
-import { MdDelete, MdRemoveRedEye } from "react-icons/md";
-import useRLStore from "../../lib/store";
 
 const SubscriptionPage = () => {
   const { getSubscriptions, subscriptions } = useRLStore((state) => state);
@@ -45,7 +43,7 @@ const SubscriptionPage = () => {
               <td className="hidden">{subscription.total_tenants}</td>
               <td className="hidden">{subscription.amount}</td>
               <td className="hidden">{subscription.payment_status}</td>
-              <td className="hidden">{subscription.date_paid}</td>
+              <td className="hidden"><TimeAgo date={subscription?.date_paid}/></td>
             </tr>
           ))}
         </tbody>

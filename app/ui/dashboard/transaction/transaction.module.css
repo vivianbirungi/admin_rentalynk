@@ -1,7 +1,7 @@
 .container{
     background: var(--bgSoft);
     padding: 20px;
-    border-radius: 20px;
+    border-radius: var(--borderRadius);
     width: 100%;
 }
 .title{
