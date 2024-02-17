@@ -7,7 +7,7 @@ const page = () => {
     console.log(tenants);
   return (
     <div className={styles.container}>
-       { tenants.results.map((tenant)=>(
+       { tenants?.results?.map((tenant)=>(
         <div className={styles.single}>
              <Card data={tenant}/>
              </div>
