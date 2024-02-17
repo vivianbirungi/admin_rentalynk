@@ -1,16 +1,47 @@
-import { MdHomeWork, MdSupervisedUserCircle } from 'react-icons/md'
-import styles from './card.module.css'
-const Card = ({title, numbers}) => {
+import { MdHomeWork, MdSupervisedUserCircle } from "react-icons/md";
+import styles from "./card.module.css";
+const Card = ({ title, numbers, tenants }) => {
   return (
-    <div className={styles.container}>
-      {title == "Properties" ? <MdHomeWork size={24}/>:<MdSupervisedUserCircle size={24}/>}
-      <div className={styles.texts}>
-        <span className={styles.title}>{title}</span>
-        <span className={styles.number}>{numbers}</span>
-        <span className={styles.detail}><span className={styles.positive}>12%</span> more than previous</span>
-      </div>
-    </div>
-  )
-}
+    <>
+      {title == "Users" ? (
+        <div className={styles.container}>
+          <div className={styles.texts}>
+            <MdSupervisedUserCircle size={24} />
 
-export default Card
+            <span className={styles.title}>
+              <b>{title}</b>
+            </span>
+          </div>
+          <div className={styles.users}>
+            <div className={styles.landlordflex}>
+              <span className={styles.number}>{numbers}</span>
+              <span className={styles.landlords}>LandLords</span>
+            </div>
+            <div className={styles.tenantsflex}>
+              <span className={styles.number}>{tenants}</span>
+              <span className={styles.tenants}>Tenants</span>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div className={styles.container}>
+          <div className={styles.texts}>
+            {title == "Properties" ? (
+              <MdHomeWork size={24} />
+            ) : (
+              <MdSupervisedUserCircle size={24} />
+            )}
+            <span className={styles.title}>
+              <b>{title}</b>
+            </span>{" "}
+            <br />
+          </div>
+          <span className={styles.number}>{numbers}</span>
+          <small className={styles.detail}> this month</small>
+        </div>
+      )}
+    </>
+  );
+};
+
+export default Card;

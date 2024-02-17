@@ -10,6 +10,7 @@ const useRLStore = create(
       landLords: [],
       subscriptions: [],
       bookings: [],
+      tenancies: [],
       activeUser: null,
       activeProperty: null,
       activeBooking:null,
@@ -44,6 +45,10 @@ const useRLStore = create(
           console.log('vbnnn');
           set((state) => ({ ...state, bookings: results.data.results}));
        },
+        getTenancies: async () => {
+          const results = await instance.get('get_tenancies');
+          set((state)=>({...state, tenancies: results.data.results}))
+        },
      
       setActiveUser: (userId, userType) => {
         let user = null;

@@ -1,11 +1,11 @@
 "use client";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import Avatar from "react-avatar";
-import { MdDelete, MdOutlineRemoveRedEye } from "react-icons/md";
+import { MdOutlineRemoveRedEye } from "react-icons/md";
+import TimeAgo from 'react-timeago';
 import useRLStore from "../../lib/store";
 import Pagination from "../../ui/dashboard/pagination/pagination";
-
-import { useRouter } from "next/navigation";
 import Search from "../../ui/dashboard/search/search";
 import SelectItem from "../../ui/dashboard/select/select";
 import styles from "../../ui/dashboard/users/users.module.css";
@@ -103,7 +103,7 @@ const UsersPage = () => {
                 </div>
               </td>
               <td className="hidden"> {user?.email}</td>
-              <td className="hidden"> {user?.created_at}</td>
+              <td className="hidden"> <TimeAgo date={user?.created_at} /></td>
               <td className="hidden">{user?.user_type}</td>
               <td className="hidden">
                 {user?.isVerified == "Y" ? "YES" : "NO"}
@@ -114,13 +114,10 @@ const UsersPage = () => {
                     className={`${styles.button} ${styles.view}`}
                     onClick={() => handleViewUser(user.user_id, user.user_type)}
                   >
-                    <MdOutlineRemoveRedEye />
+                    <MdOutlineRemoveRedEye size={20} />
                   </button>
 
-                  <input type="hidden" name="id" value="" />
-                  <button className={`${styles.button} ${styles.delete}`}>
-                    <MdDelete />
-                  </button>
+                 
                 </div>
               </td>
             </tr>
