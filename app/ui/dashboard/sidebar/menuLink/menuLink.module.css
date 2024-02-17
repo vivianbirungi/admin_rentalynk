@@ -4,10 +4,10 @@
     align-items: center;
     gap:10px;
     margin: 5px 0px;
-    border-radius: 10px;
+    border-radius: var(--borderRadius);
 }
 .container:hover, .active{
-    background-color: #2e374a;;
+    background-color: var(--orange);;
 }
 @media only screen and (max-width: 600px) {
     .container{

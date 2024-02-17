@@ -1,9 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root{
-  --bg:#151c2c;
-  --bgSoft:#182237;
+  --bg:#0d433e;
+  --bgSoft:#009688;
+  --orange:#D5770A;
   --text:white;
   --textSoft:#b7bac1;
+  --borderRadius:6px;
 }
+
 *{
   margin:0;
   padding:0;
@@ -12,6 +17,7 @@
 body{
   background-color: var(--bg);
   color:var(--text);
+  font-family: "Montserrat", sans-serif;
 }
 a{
   color:inherit;
@@ -37,7 +43,7 @@ a{
     margin-right: 8px;
     background-color: rgba(0, 0, 0, 0.1);
     padding: 10px;
-    border-radius: 10px;
+    border-radius: var(--borderRadius);
     margin-bottom: 10px;
 }
 
@@ -45,7 +51,7 @@ a{
     margin-right: 8px;
     background-color: rgba(0, 0, 0, 0.1);
     padding: 10px;
-    border-radius: 10px;
+    border-radius: var(--borderRadius);
     margin-bottom: 10px;
 }
 
@@ -92,4 +98,15 @@ a{
   display: flex;
   justify-content: space-between;
   width: 100%;
+}
+
+tbody tr td {
+  font-size: 13px !important;
+  font-weight: 200 !important;
+  transition: all;
+}
+
+
+tbody tr:hover {
+  background-color: var(--bg);
 }

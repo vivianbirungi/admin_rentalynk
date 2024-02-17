@@ -10,7 +10,7 @@
     background-color: var(--bgSoft);
     display: flex;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: var(--borderRadius);
     font-weight: bold;
     color: var(--textSoft);
     height: max-content;
@@ -19,7 +19,7 @@
   .imgContainer{
     flex:1;
     position: relative;
-    border-radius: 10px;
+    border-radius: var(--borderRadius);
     overflow: hidden;
     margin-bottom: 20px;
 
@@ -44,7 +44,7 @@
     background: rgb(15,157,158);
 background: linear-gradient(40deg, rgba(15,157,158,1) 40%, rgba(0,255,201,1) 48%, rgba(255,255,255,1) 94%);
     color: var(--text); ;
-    border-radius: 10px;
+    border-radius: var(--borderRadius);
     padding:10px;
   }
   .userInfo{
@@ -66,21 +66,21 @@ background: linear-gradient(40deg, rgba(15,157,158,1) 40%, rgba(0,255,201,1) 48%
     display: flex;
     background-color: var(--bgSoft);
     padding: 20px;
-    border-radius: 10px;
+    border-radius: var(--borderRadius);
     color: rgb(45, 40, 40);
     gap:20px
   }
   .propertyContainer{
     background-color: var(--bg);
     flex:1;
-    border-radius: 10px;
+    border-radius: var(--borderRadius);
     color:#ffffff;
     padding:20px;
     
   }
   .tendanciesContainer{
     background-color: var(--bg);
-    border-radius: 10px;
+    border-radius: var(--borderRadius);
     color:#ffffff;
     flex:1;
     padding:20px;
@@ -165,7 +165,7 @@ background: linear-gradient(40deg, rgba(15,157,158,1) 40%, rgba(0,255,201,1) 48%
     background: transparent;
     border:none;
     padding:10px;
-    border-radius: 20px;
+    border-radius: var(--borderRadius);
 }
 .tabactive{
     background: white;
@@ -194,7 +194,7 @@ background: linear-gradient(40deg, rgba(15,157,158,1) 40%, rgba(0,255,201,1) 48%
     list-style: none;
     background-color: white;
     color:black;
-    border-radius: 10px;
+    border-radius: var(--borderRadius);
     justify-content: space-between;
     padding-left:20px;
 }
@@ -216,7 +216,7 @@ background: linear-gradient(40deg, rgba(15,157,158,1) 40%, rgba(0,255,201,1) 48%
   
   .form input, .form textarea, .form select{
     padding: 20px;
-    border: 2px solid #2e374a;
+    border: 2px solid var(--orange);
     border-radius: 5px;
     background-color: var(--bg);
     color: var(--text);

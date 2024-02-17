@@ -1,14 +1,14 @@
 .container{
     background: var(--bgSoft);
     padding:20px;
-    border-radius: 10px;
+    border-radius: var(--borderRadius);
     display: flex;
     gap:20px;
     cursor:pointer;
     width: 100%;
 }
 .container:hover{
-    background: #2e374a;
+    background: var(--orange);
 }
 .texts{
     display: flex;

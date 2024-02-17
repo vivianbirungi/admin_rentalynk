@@ -1,7 +1,7 @@
 .accordion{
     background-color: #182237;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: var(--borderRadius);
     cursor: pointer;
 }
 .accordionHeader{
