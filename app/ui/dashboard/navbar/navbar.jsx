@@ -1,34 +1,33 @@
-"use client"
+"use client";
 
-import { usePathname } from 'next/navigation';
+import { usePathname } from "next/navigation";
 import {
   MdNotifications,
   MdOutlineChat,
-  MdPublic, MdSearch
-} from 'react-icons/md';
-import styles from './navbar.module.css';
-import DropdownMenu from '../dropdown/dropdown'
+  MdPublic,
+  MdSearch,
+} from "react-icons/md";
+import styles from "./navbar.module.css";
+import DropdownMenu from "../dropdown/dropdown";
 const Navbar = () => {
-
   const pathname = usePathname();
-   console.log(pathname);
   return (
     <div className={styles.container}>
-    
-    <div className={styles.mobile}>
-    <div className={styles.menu_mobile}>
-     <div className={styles.DropdownMenu}><DropdownMenu/></div> 
-      <div className={styles.title}>{pathname.split("/").pop()}</div>
-      <div className={styles.icons}>
-          <MdOutlineChat size={20} />
-          <MdNotifications size={20} />
-          <MdPublic size={20} />
+      <div className={styles.mobile}>
+        <div className={styles.menu_mobile}>
+          <div className={styles.DropdownMenu}>
+            <DropdownMenu />
+          </div>
+          <div className={styles.title}>{pathname.split("/").pop()}</div>
+          <div className={styles.icons}>
+            {/* <MdOutlineChat size={20} />
+            <MdNotifications size={20} /> */}
+            <MdPublic size={20} />
+          </div>
         </div>
+      </div>
     </div>
-    
-    </div>
-    </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

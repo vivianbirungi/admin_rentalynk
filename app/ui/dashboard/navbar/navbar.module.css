@@ -1,8 +1,8 @@
 .container{
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
     border-radius: var(--borderRadius);
     background: var(--bgSoft);
 }
@@ -37,13 +37,11 @@
 .mobile{
     display: inline-block;
     width:100%;
-    padding:10px;
-
 }
 .menu_mobile{
     display: flex;
-    margin-bottom: 20px;
     justify-content: space-between;
+    padding: 10px;
    
 }
 .DropdownMenu{
