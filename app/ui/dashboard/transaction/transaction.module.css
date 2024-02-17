@@ -1,24 +1,20 @@
 .container{
-    background: var(--bgSoft);
+    /* background: var(--bgSoft); */
     padding: 20px;
     border-radius: var(--borderRadius);
     width: 100%;
+    border:.5px solid var(--bgSoft)
 }
 .title{
-    margin-bottom: 20px;
-    font-weight: 200;
-    color:var(--text)
+    font-weight: 600;
+    color:#444;
+    font-size: 18px;
 }
 .table{
     width: 100%;
+    color:#444;
 }
-.table td{
-    padding: 10px;
-}
-.table tr:hover{
-    box-shadow: 6px 4px 10px -2px rgb(122, 121, 121);
-  
-  }
+
 
 .user{
     display: flex;

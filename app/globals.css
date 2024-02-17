@@ -1,61 +1,59 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
-:root{
-  --bg:#0d433e;
-  --bgSoft:#009688;
-  --orange:#D5770A;
-  --text:white;
-  --textSoft:#b7bac1;
-  --borderRadius:6px;
+:root {
+  --bg: #0d433e;
+  --bgSoft: #009688;
+  --orange: #d5770a;
+  --text: white;
+  --textSoft: #b7bac1;
+  --borderRadius: 6px;
 }
 
-*{
-  margin:0;
-  padding:0;
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
-body{
-  background-color: var(--bg);
-  color:var(--text);
+body {
+  color: var(--text);
   font-family: "Montserrat", sans-serif;
 }
-a{
-  color:inherit;
+a {
+  color: inherit;
   text-decoration: none;
-  
 }
-@media only screen and (max-width: 768px){
-  body{
-    width:100% !important;
+@media only screen and (max-width: 768px) {
+  body {
+    width: 100% !important;
   }
-  .hidden{
+  .hidden {
     display: none !important;
-}
+  }
 }
 
-.section_row{
+.section_row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
 .section_row span {
-    margin-right: 8px;
-    background-color: rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    border-radius: var(--borderRadius);
-    margin-bottom: 10px;
+  margin-right: 8px;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: var(--borderRadius);
+  margin-bottom: 10px;
 }
 
-.unit_price{
-    margin-right: 8px;
-    background-color: rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    border-radius: var(--borderRadius);
-    margin-bottom: 10px;
+.unit_price {
+  margin-right: 8px;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: var(--borderRadius);
+  margin-bottom: 10px;
 }
 
-.section{
+.section {
   background-color: #182237;
   padding: 20px;
   margin-top: 10px;
@@ -69,7 +67,7 @@ a{
 
 .section span {
   margin-right: 8px;
-  background-color:rgba(0,0,0,0.1);
+  background-color: rgba(0, 0, 0, 0.1);
   padding: 10px;
   border-radius: 10px;
 }
@@ -78,19 +76,17 @@ a{
   margin-right: 30px;
   font-size: 17px;
   display: flex;
-
 }
 
 .stats div small {
   margin-left: 15px;
-
 }
 
 .btnDelete {
   padding: 10px;
   background-color: red;
-  color:#fff;
-  border:none;
+  color: #fff;
+  border: none;
   font-weight: bolder;
 }
 
@@ -101,30 +97,42 @@ a{
 }
 
 table {
-  margin-top: 30px;
   width: 100%;
   border-collapse: collapse;
 }
-table th tr{
-  padding-bottom: 100px;
-}
-table th, table td {
-  padding: 28px;
+
+table th,
+table td {
+  padding-top: 20px;
+  padding-bottom: 20px;
   text-align: left;
+}
+
+table thead tr {
+  border-bottom: 0.6px solid #555;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--bgSoft);
 }
 
 /* Add your custom styles for table rows here */
 table tr {
-  background-color: var(--bgSoft);
-  color:#ffffff;
+  /* background-color: var(--bgSoft); */
+  color: #444;
   margin-bottom: 100px;
-  cursor: pointer;  
+  cursor: pointer;
 }
 
 /* Styling for alternating rows */
 tbody tr:hover {
-  opacity: .8;
+  opacity: 0.8;
   cursor: pointer;
+  background-color: #00968885;
+}
+
+tbody tr {
+  cursor: pointer;
+  font-size: 14px;
 }
 
 .loadingPage {
@@ -134,5 +142,4 @@ tbody tr:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
