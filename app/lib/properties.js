@@ -11,7 +11,6 @@ const deletePropertyApi = async (property_id) => {
 };
 const getBookings = async () => {
   const response = await instance.get('get_bookings');
-  console.log(response);
   return response.data;
 }
 

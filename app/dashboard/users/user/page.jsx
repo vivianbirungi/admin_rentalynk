@@ -23,14 +23,12 @@ const SingleUserPage = () => {
     const subscriptions = await instance.get(
       `get_subscriptions/${activeUser?.user_id}`
     );
-    console.log(subscriptions);
     setSubscriptions(subscriptions.data.results);
   };
   const getUserbooking = async () => {
     const response = await instance.get(
       `get_user_bookings/${activeUser?.user_id}`
     );
-    console.log(response);
     setBookings(response.data.results);
   };
   const handlePagination = (e) => {
@@ -40,7 +38,6 @@ const SingleUserPage = () => {
     if (activeUser?.user_type == "landlord") get_subscription();
     else getUserbooking();
   }, []);
-  console.log({ myProperties });
   return (
     <div className={styles.container}>
       <div className={styles.infoContainer}>

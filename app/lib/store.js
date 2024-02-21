@@ -35,7 +35,6 @@ const useRLStore = create(
       getLandlords: async () => {
         const results = await instance.get(`get_Users/landlord`);
 
-        console.log("i am here");
         set((state) => ({ ...state, landLords: results.data }));
       },
 
@@ -47,7 +46,6 @@ const useRLStore = create(
 
       getBookings: async () => {
         const results = await instance.get("get_bookings");
-        console.log("vbnnn");
         set((state) => ({ ...state, bookings: results.data.results }));
       },
       getTenancies: async () => {

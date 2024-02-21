@@ -5,7 +5,6 @@ import TimeAgo from "react-timeago";
 import styles from "../../ui/dashboard/tenancies/tenancies.module.css";
 const page = () => {
   const { tenancies } = useRLStore((state) => state);
-  console.log(tenancies);
 
   //on reload data
 

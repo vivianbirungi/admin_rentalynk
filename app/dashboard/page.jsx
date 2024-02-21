@@ -18,7 +18,6 @@ const Dashboard = () => {
     getProperties,
     getTenancies,
   } = useRLStore((state) => state);
-  console.log({ tenants });
 
   useEffect(() => {
     getTenants();

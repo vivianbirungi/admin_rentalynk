@@ -19,7 +19,6 @@ const SingleProductPage = () => {
       router.push("/dashboard/property");
       alert("Property has been deleted");
     } catch (error) {
-      console.log(error.message);
     }
   };
 

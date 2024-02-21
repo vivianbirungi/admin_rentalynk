@@ -9,7 +9,6 @@ import styles from "../../ui/dashboard/users/users.module.css";
 const SubscriptionPage = () => {
   const { getSubscriptions, subscriptions } = useRLStore((state) => state);
 
-  console.log(subscriptions);
 
   useEffect(() => {
     getSubscriptions();
