@@ -40,7 +40,6 @@ const Dashboard = () => {
           <Card title="Tenancies" numbers={tenancies?.length} />
         </div>
         <Transaction />
-        {/* <Chart/> */}
       </div>
       <div className={styles.side}>
         <Rightbar />

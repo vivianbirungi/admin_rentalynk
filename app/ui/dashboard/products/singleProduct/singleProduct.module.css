@@ -1,76 +1,70 @@
 .container {
-    display: flex;
-    flex-direction: column;
-   
-    margin-top: 20px;
-  }
-  
-  .infoContainer {
-   
-    background-color: var(--bgSoft);
-    padding: 20px;
-    border-radius: var(--borderRadius);
-    font-weight: bold;
-    color: var(--textSoft);
-    display: flex;
-    width: 980px;
-    
-    overflow-x: auto;
-    gap:2px;
-    height: max-content;
-    overscroll-behavior-inline: contain;
-  }
-  .mediaElement{
-    display: inline-block;
-    gap: 1rem;
-    padding: 0.2rem;
-    background: transparent;
-    max-width: 100%;
-  }
-  .snapsinline {
-    scroll-snap-type: inline mandatory;
-    scroll-padding-inline: var(--_spacer, 1rem);
-  }
-  
-  .snapsinline > * {
-    scroll-snap-align: start;
-  }
-  
-  .infoContainer::-webkit-scrollbar {
-    display: none;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.infoContainer {
+  background-color: var(--bgSoft);
+  padding: 20px;
+  border-radius: var(--borderRadius);
+  font-weight: bold;
+  color: var(--textSoft);
+  display: flex;
+  width: 980px;
+  overflow-x: auto;
+  gap: 2px;
+  height: max-content;
+  overscroll-behavior-inline: contain;
+}
+.mediaElement {
+  display: inline-block;
+  gap: 1rem;
+  padding: 0.2rem;
+  background: transparent;
+  max-width: 100%;
+}
+.snapsinline {
+  scroll-snap-type: inline mandatory;
+  scroll-padding-inline: var(--_spacer, 1rem);
+}
+
+.snapsinline > * {
+  scroll-snap-align: start;
+}
+
+.infoContainer::-webkit-scrollbar {
+  display: none;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .infoContainer {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
-  
-  .detailContainer {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap:40px
-  }
- .propertyName{
-    font-weight: bold;
-    font-size: 20px ;
-    padding-bottom: 10px;
-  }
-  .headerInfo span{
-    font-size: 12px;
-  }
-  .description h6{
-    margin-bottom: 5px;
-  }
-  .description p{
-    text-wrap:wrap;
-  }
-  .units{
-    display: flex;
-    flex-direction: column;
-    gap:10px;
-  }
- 
-  
- 
+
+.detailContainer {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.propertyName {
+  font-weight: bold;
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+.headerInfo span {
+  font-size: 12px;
+}
+.description h6 {
+  margin-bottom: 5px;
+}
+.description p {
+  text-wrap: wrap;
+}
+.units {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

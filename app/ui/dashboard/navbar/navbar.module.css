@@ -4,10 +4,10 @@
     align-items: center;
     justify-content: space-between;
     border-radius: var(--borderRadius);
-    background: var(--bgSoft);
+    /* background: var(--bgSoft); */
 }
 .title{
-    color: var(--textSoft);
+    color: var(--bgSoft);
     font-weight: bold;
     text-transform: capitalize;
 }
@@ -32,7 +32,8 @@
 }
 .icons{
     display: flex;
-    gap:10px
+    gap:10px;
+    color:var(--orange);
 }
 .mobile{
     display: inline-block;

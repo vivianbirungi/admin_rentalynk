@@ -1,6 +1,6 @@
 "use client";
 import { useEffect } from "react";
-import TimeAgo from 'react-timeago';
+import TimeAgo from "react-timeago";
 import useRLStore from "../../lib/store";
 import Pagination from "../../ui/dashboard/pagination/pagination";
 import Search from "../../ui/dashboard/search/search";
@@ -41,9 +41,11 @@ const SubscriptionPage = () => {
               <td className="hidden">{subscription.pro_title}</td>
               <td className="hidden">{subscription.tx_ref}</td>
               <td className="hidden">{subscription.total_tenants}</td>
-              <td className="hidden">{subscription.amount}</td>
+              <td className="hidden">{subscription.amount} Ugx</td>
               <td className="hidden">{subscription.payment_status}</td>
-              <td className="hidden"><TimeAgo date={subscription?.date_paid}/></td>
+              <td className="hidden">
+                <TimeAgo date={subscription?.date_paid} />
+              </td>
             </tr>
           ))}
         </tbody>
