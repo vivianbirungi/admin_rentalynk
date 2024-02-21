@@ -19,7 +19,6 @@ const SingleProductPage = () => {
       router.push("/dashboard/property");
       alert("Property has been deleted");
     } catch (error) {
-      console.log(error.message);
     }
   };
 
@@ -120,7 +119,9 @@ const SingleProductPage = () => {
         <h3>Amenities</h3>
         <div className="section_row">
           {activeProperty?.amenities.split(",").map((amenity) => (
-            <span>{amenity}</span>
+            <span>
+              <small>{amenity}</small>
+            </span>
           ))}
         </div>
       </div>

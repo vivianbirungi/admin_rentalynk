@@ -54,11 +54,13 @@ a {
 }
 
 .section {
-  background-color: #182237;
+
+
   padding: 20px;
   margin-top: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
+  color:#555;
 }
 
 .section h3 {
@@ -106,11 +108,13 @@ table td {
   padding-top: 20px;
   padding-bottom: 20px;
   text-align: left;
+  padding-left: 10px;
+
 }
 
 table thead tr {
-  border-bottom: 0.6px solid #555;
-  font-size: 16px;
+  border-bottom: 0.6px solid var(--bgSoft);
+  font-size: 12px;
   font-weight: bold;
   color: var(--bgSoft);
 }
@@ -121,18 +125,21 @@ table tr {
   color: #444;
   margin-bottom: 100px;
   cursor: pointer;
+  padding-left: 10px;
+  transition: 400ms ease-in-out;
 }
 
 /* Styling for alternating rows */
 tbody tr:hover {
   opacity: 0.8;
   cursor: pointer;
-  background-color: #00968885;
+  background-color: #f0d48c85;
 }
 
 tbody tr {
   cursor: pointer;
   font-size: 14px;
+  padding-left: 10px;
 }
 
 .loadingPage {

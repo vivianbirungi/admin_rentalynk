@@ -5,7 +5,6 @@ import Timeago from "react-timeago";
 import styles from "../../ui/dashboard/bookings/bookings.module.css";
 const page = () => {
   const { bookings, getBookings, setBooking } = useRLStore((state) => state);
-  console.log(bookings);
   useEffect(() => {
     getBookings();
   }, []);

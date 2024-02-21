@@ -1,54 +1,68 @@
-.container{
-    /* background: var(--bgSoft); */
-    padding: 20px;
-    border-radius: var(--borderRadius);
-    width: 100%;
-    border:.5px solid var(--bgSoft)
+.container {
+  /* background: var(--bgSoft); */
+  padding: 16px;
+  border-radius: var(--borderRadius);
+  border: 0.5px solid #666;
+  width: 49.5%;
 }
-.title{
-    font-weight: 600;
-    color:#444;
-    font-size: 18px;
+.title {
+  font-weight: 600;
+  color: #444;
+  font-size: 18px;
 }
-.table{
-    width: 100%;
-    color:#444;
+.table {
+  width: 100%;
+  color: #444;
 }
 
-
-.user{
-    display: flex;
-    gap:10px;
-    align-items: center;
+.user {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
-.userImage{
-    border-radius: 50%;
-    object-fit: cover;
+.userImage {
+  border-radius: 50%;
+  object-fit: cover;
 }
-.status{
-    border-radius: 5px;
-    padding: 5px;
-    font-size: 14px;
-    color:white;
+.status {
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 14px;
+  color: white;
 }
-.cancelled{
-    color: #fc5a1a75;
+.cancelled {
+  color: #fc5a1a75;
 }
-.done{
-    color: #dde3e675;
+.done {
+  color: #dde3e675;
 }
-.pending{
-    color: #f8f7f775;
+.pending {
+  color: #f8f7f775;
 }
 @media only screen and (max-width: 768px) {
-    
-    .container{
-        width:80%;
-        overflow-x:scroll !important;
-    }
-    .table{
-        width:90% !important;
-        overflow-x: scroll;
-    }
-    
+  .container {
+    width: 80%;
+    overflow-x: scroll !important;
+  }
+  .table {
+    width: 90% !important;
+    overflow-x: scroll;
+  }
+}
+
+.gridList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.cardHeading {
+  border-bottom: 0.5px solid #555;
+  padding-bottom: 15px;
+}
+
+.cardHeading .title {
+  font-size: 13px;
 }

@@ -12,7 +12,7 @@
 
 .addButton {
   padding: 10px;
-  background-color: #5d57c9;
+  background-color: var(--orange);
   color: var(--text);
   border: none;
   border-radius: 5px;
@@ -64,9 +64,18 @@
   flex-direction: column;
   padding: 10px;
   margin-top: 10px;
-  background-color: var(--orange);
-  border-radius: 20px;
+  border-radius: var(--borderRadius);
+  color:#555;
+  background-color: #eee;
+  transition: 300ms ease-in-out;
 }
+
+.propertyContainer:hover {
+  background-color: var(--orange);
+  color:#fff;
+}
+
+
 .content {
   flex: 3;
   display: flex;
@@ -75,9 +84,10 @@
   padding: 20px 0 20px 0;
 }
 .header {
-  font-size: 16px;
   font-weight: bold;
+  text-transform: capitalize;
 }
+
 .status {
   background-color: rgba(0, 128, 0, 0.689);
   padding: 5px;
@@ -105,6 +115,21 @@
   flex-direction: column;
   gap: 5px;
 }
+
+.productDetail small {
+  text-transform: uppercase;
+  font-size: 9px;
+}
+
+.productDetail .header{
+  width: 100%;
+  overflow: hidden;
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
 .list {
   display: flex;
   justify-content: space-between;

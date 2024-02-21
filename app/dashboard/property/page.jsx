@@ -13,16 +13,13 @@ const Products = () => {
 
   const end = start + 100;
 
-  const { properties, getProperties } = useRLStore(
-    (state) => state
-  );
+  const { properties, getProperties } = useRLStore((state) => state);
 
   const entries = Array.isArray(properties) ? properties.slice(start, end) : [];
 
   const handlePagination = (e) => {
     setCurrentPage(e);
   };
-console.log({properties})
   useEffect(() => {
     getProperties();
   }, []);
@@ -41,9 +38,7 @@ console.log({properties})
         {entries.map((property) => (
           <div className={styles.single}>
             <Link href={`/dashboard/property/property`}>
-              <Product
-                productData={property}
-              />
+              <Product productData={property} />
             </Link>
           </div>
         ))}
