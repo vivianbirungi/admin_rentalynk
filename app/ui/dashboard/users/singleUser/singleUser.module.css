@@ -7,7 +7,6 @@
   
   .infoContainer {
     width:800px;
-    background-color: var(--bgSoft);
     display: flex;
     padding: 20px;
     border-radius: var(--borderRadius);
@@ -41,8 +40,6 @@
     font-size: 1.5rem;
   }
   .header :last-child{
-    background: rgb(15,157,158);
-background: linear-gradient(40deg, rgba(15,157,158,1) 40%, rgba(0,255,201,1) 48%, rgba(255,255,255,1) 94%);
     color: var(--text); ;
     border-radius: var(--borderRadius);
     padding:10px;
@@ -64,14 +61,14 @@ background: linear-gradient(40deg, rgba(15,157,158,1) 40%, rgba(0,255,201,1) 48%
   .formContainer {
     flex: 1;
     display: flex;
-    background-color: var(--bgSoft);
+    /* background-color: var(--bgSoft); */
     padding: 20px;
     border-radius: var(--borderRadius);
     color: rgb(45, 40, 40);
     gap:20px
   }
   .propertyContainer{
-    background-color: var(--bg);
+    /* background-color: var(--bg); */
     flex:1;
     border-radius: var(--borderRadius);
     color:#ffffff;
@@ -102,7 +99,7 @@ background: linear-gradient(40deg, rgba(15,157,158,1) 40%, rgba(0,255,201,1) 48%
 
 /* Add your custom styles for table rows here */
 .table tr {
-  background-color: var(--bg);
+  /* background-color: var(--bg); */
   color:#ffffff;
   margin-bottom: 100px;
   
@@ -143,7 +140,7 @@ background: linear-gradient(40deg, rgba(15,157,158,1) 40%, rgba(0,255,201,1) 48%
   }
   
   .view{
-    background-color: teal;
+    /* background-color: teal; */
   }
   
   .delete{

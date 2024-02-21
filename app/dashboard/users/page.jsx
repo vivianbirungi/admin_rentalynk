@@ -70,7 +70,10 @@ const UsersPage = () => {
     router.push("/dashboard/users/user");
   };
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      onClick={() => handleViewUser(user.user_id, user.user_type)}
+    >
       <div className={styles.top}>
         <SelectItem
           selectedValue={type}
@@ -88,7 +91,6 @@ const UsersPage = () => {
             <td>Name</td>
             <td className="hidden">Email</td>
             <td className="hidden">Created At</td>
-            <td className="hidden">Role</td>
             <td className="hidden">Status</td>
             <td>Action</td>
           </tr>
@@ -103,8 +105,10 @@ const UsersPage = () => {
                 </div>
               </td>
               <td className="hidden"> {user?.email}</td>
-              <td className="hidden"> <TimeAgo date={user?.created_at} /></td>
-              <td className="hidden">{user?.user_type}</td>
+              <td className="hidden">
+                {" "}
+                <TimeAgo date={user?.created_at} />
+              </td>
               <td className="hidden">
                 {user?.isVerified == "Y" ? "YES" : "NO"}
               </td>
@@ -116,8 +120,6 @@ const UsersPage = () => {
                   >
                     <MdOutlineRemoveRedEye size={20} />
                   </button>
-
-                 
                 </div>
               </td>
             </tr>
