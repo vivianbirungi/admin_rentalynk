@@ -6,6 +6,7 @@ import instance from "../../../../config";
 import useRLStore from "../../../lib/store";
 import Pagination from "../../../ui/dashboard/pagination/pagination";
 import styles from "../../../ui/dashboard/users/singleUser/singleUser.module.css";
+import Avatar from "react-avatar";
 const SingleUserPage = () => {
   const { activeUser, properties } = useRLStore((state) => state);
   // useEffect(()=>{getActiveUser})
@@ -42,7 +43,7 @@ const SingleUserPage = () => {
     <div className={styles.container}>
       <div className={styles.infoContainer}>
         <div className={styles.imgContainer}>
-          <Image src="/noavatar.png" alt="" width={200} height={200} />
+          <Avatar name={activeUser?.full_name} size="200" />
         </div>
         <div className={styles.userDetail}>
           <div className={styles.header}>
@@ -59,12 +60,10 @@ const SingleUserPage = () => {
             <div>
               <span>phone: </span> <span>{activeUser?.phone}</span>
             </div>
-            <div>
-              <span>Country:</span> <span>{activeUser?.country} </span>
-            </div>
           </div>
         </div>
       </div>
+
       {activeUser?.user_type == "landlord" ? (
         <div className={styles.formContainer}>
           <div className={styles.tabcontainer}>
