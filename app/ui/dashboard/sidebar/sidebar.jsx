@@ -1,6 +1,6 @@
-'use client'
-import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+"use client";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 import {
   MdAnalytics,
   MdAttachMoney,
@@ -11,13 +11,12 @@ import {
   MdSearch,
   MdShoppingBag,
   MdSupervisedUserCircle,
-  MdWork
+  MdWork,
 } from "react-icons/md";
-import secureLocalStorage from 'react-secure-storage';
-import MenuLink from './menuLink/menuLink';
-import styles from './sidebar.module.css';
+import secureLocalStorage from "react-secure-storage";
+import MenuLink from "./menuLink/menuLink";
+import styles from "./sidebar.module.css";
 import { useMemo } from "react";
-
 
 const rolesLinks = {
   admin: [
@@ -251,4 +250,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar
+export default Sidebar;

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { MdDelete, MdEdit } from "react-icons/md";
 import styles from "./products.module.css";
 import { getImages } from "../../../lib/utilties";
 import useRLStore from "../../../lib/store";
@@ -15,6 +14,7 @@ const Property = ({ productData }) => {
         setActiveProperty(productData.property_id);
       }}
     >
+
       {images.length > 0 ? (
         <Image
           className={styles.productImage}
@@ -22,6 +22,7 @@ const Property = ({ productData }) => {
           width={180}
           height={200}
           alt="productImage"
+          style={{ marginRight: 10, aspectRatio: 1, borderRadius: 10 }}
         />
       ) : (
         <Image
@@ -30,17 +31,18 @@ const Property = ({ productData }) => {
           width={180}
           height={200}
           alt="productImage"
+          style={{ marginRight: 10, aspectRatio: 1, borderRadius: 10 }}
         />
       )}
 
       <div className={styles.content}>
         <div className={styles.productDetail}>
-          <small style={{ textTransform: "uppercase" }}>
+          <small style={{ textTransform: "uppercase", fontSize:12 }}>
             {productData?.pro_type}
           </small>
-          <h2 className={styles.header} style={{ textTransform: "capitalize" }}>
+          <p className={styles.header} style={{ textTransform: "capitalize" }}>
             {productData?.pro_title}
-          </h2>
+          </p>
           <span className={styles.owner}>{productData?.full_name}</span>
           <span className={styles.price}>{productData?.total_units} Units</span>
         </div>

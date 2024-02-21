@@ -41,7 +41,7 @@ const SubscriptionPage = () => {
               <td className="hidden">{subscription.pro_title}</td>
               <td className="hidden">{subscription.tx_ref}</td>
               <td className="hidden">{subscription.total_tenants}</td>
-              <td className="hidden">{subscription.amount}</td>
+              <td className="hidden">{subscription.amount} Ugx</td>
               <td className="hidden">{subscription.payment_status}</td>
               <td className="hidden">
                 <TimeAgo date={subscription?.date_paid} />
