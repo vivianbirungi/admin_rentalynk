@@ -38,13 +38,16 @@
     margin-top: 5px;
 }
 .pending{
-    color:gray
+    color:gray;
+    font-weight: bolder;
 }
 .declined{
-    color:red
+    color:red;
+    font-weight: bolder;
 }
 .approved{
-    color: green
+    color: var(--bg);
+    font-weight: bolder;
 }
 .propertyImage{
     border-radius: 100%;

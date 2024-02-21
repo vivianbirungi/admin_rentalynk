@@ -1,49 +1,72 @@
-"use client"
+"use client";
 import useRLStore from "@/app/lib/store";
 import { useEffect } from "react";
+import Timeago from "react-timeago";
 import styles from "../../ui/dashboard/bookings/bookings.module.css";
 const page = () => {
-  const {bookings, getBookings, setBooking} = useRLStore(state => state);
-   console.log(bookings)
+  const { bookings, getBookings, setBooking } = useRLStore((state) => state);
+  console.log(bookings);
   useEffect(() => {
     getBookings();
   }, []);
   return (
     <div>
-       <div className={styles.propertyContainer}>
-        <h4>Properties</h4>
-        <table className={styles.table}>
-      
-      <tbody>
-     {bookings.map(booking =>(<><tr className={styles.hr}>
-      {booking.images && (
-      <td>
-        <img
-          src={`https://api.rentalynk.com/properties/${booking?.property_id}/${booking.images.split(',')[0].trim()}`}  // Display only the first image
-          alt={`First Image`}
-          width={40}
-          height={40}
-          className={styles.propertyImage}
-        />
-      </td>
-    )}
-              <td>{booking?.pro_title}<br/><span className={styles.muted_text}>{booking?.total_units} units </span></td>
-              <td>{booking?.booked_date}</td>
-              <td className={styles[booking?.booking_status]}>{booking?.booking_status}</td>
-              <td><button className={styles.button}>Action</button></td>
+      <div className={styles.propertyContainer}>
+        <table>
+          <thead>
+            <tr>
+              <td>Tenancy</td>
+              <td className="hidden">Payment</td>
+              <td className="hidden">Message</td>
+              <td className="hidden">Booking</td>
+              <td>Action</td>
+            </tr>
+          </thead>
+          <tbody>
+            {bookings.map((booking) => (
+              <>
+                <tr className={styles.hr}>
+                  <td>
+                    {booking.full_name}
+                    <br />
+                    <span className={styles.muted_text}>
+                      {booking?.pro_title}
+                    </span>
+                  </td>
+                  <td>
+                    <span>{booking?.brokerage_fees}</span>
+                    <br />
+                    <small>{booking?.paid_status}</small>
+                  </td>
+                  <td className="tooltip-cell" data-tooltip={booking?.message}>
+                    <span className="ellipsis">{booking?.message}</span>
+                    <br />
+                  </td>
+                  <td>
+                    <span className={styles[booking?.booking_status]}>
+                      {booking?.booking_status}
+                    </span>
+                    <br />
+                    <small>
+                      <Timeago date={booking?.booked_date} />
+                    </small>
+                  </td>
 
-      </tr>
-     </>))}
-    
-        </tbody>
-      </table>
-      {/* <Pagination arrayLength={bookings.length}
+                  <td>
+                    <button className={styles.button}>Action</button>
+                  </td>
+                </tr>
+              </>
+            ))}
+          </tbody>
+        </table>
+        {/* <Pagination arrayLength={bookings.length}
           currentPage={currentPage}
           handleClick={handlePagination}
           perpage={10} /> */}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;
