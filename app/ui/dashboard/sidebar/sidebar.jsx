@@ -13,6 +13,7 @@ import {
   MdSupervisedUserCircle,
   MdWork,
 } from "react-icons/md";
+import Avatar from "react-avatar";
 import secureLocalStorage from "react-secure-storage";
 import MenuLink from "./menuLink/menuLink";
 import styles from "./sidebar.module.css";
@@ -202,21 +203,15 @@ const menuItems = [
     ],
   },
 ];
+
 const Sidebar = () => {
   const router = useRouter();
-
   const user = useMemo(() => secureLocalStorage.getItem("user"), []);
 
   return (
     <div className={styles.container}>
       <div className={styles.user}>
-        <Image
-          className={styles.userImage}
-          src="/noavatar.png"
-          alt=""
-          width="50"
-          height="50"
-        />
+        <Avatar size="50" round={true} name={user?.name} />
         <div className={styles.userDetail}>
           <span className={styles.userTitle}>
             <b>{user?.name}</b>
