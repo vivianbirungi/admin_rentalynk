@@ -14,7 +14,6 @@ const Property = ({ productData }) => {
         setActiveProperty(productData.property_id);
       }}
     >
-
       {images.length > 0 ? (
         <Image
           className={styles.productImage}
@@ -22,7 +21,7 @@ const Property = ({ productData }) => {
           width={180}
           height={200}
           alt="productImage"
-          style={{ marginRight: 10, aspectRatio: 1, borderRadius: 10 }}
+          style={{ marginRight: 10, aspectRatio: 1, borderRadius: 5 }}
         />
       ) : (
         <Image
@@ -31,31 +30,26 @@ const Property = ({ productData }) => {
           width={180}
           height={200}
           alt="productImage"
-          style={{ marginRight: 10, aspectRatio: 1, borderRadius: 10 }}
+          style={{ marginRight: 10, aspectRatio: 1, borderRadius: 5 }}
         />
       )}
 
       <div className={styles.content}>
         <div className={styles.productDetail}>
-          <small style={{ textTransform: "uppercase", fontSize:12 }}>
-            {productData?.pro_type}
+          <small>{productData?.pro_type}</small>
+          <p className={styles.header}>{productData?.pro_title}</p>
+          <small className={styles.price}>
+            {productData?.total_units} Units
           </small>
-          <p className={styles.header} style={{ textTransform: "capitalize" }}>
-            {productData?.pro_title}
-          </p>
-          <span className={styles.owner}>{productData?.full_name}</span>
-          <span className={styles.price}>{productData?.total_units} Units</span>
+          <br />
+          <small className={styles.owner}>By {productData?.full_name}</small>
         </div>
         <div>
           <p>
             {productData?.subscription_active === "Y" ? (
-              <span style={{ color: "lime", fontWeight: "bold", fontSize: 13 }}>
-                Active
-              </span>
+              <small>Active</small>
             ) : (
-              <span style={{ color: "red", fontWeight: "bold", fontSize: 13 }}>
-                Inactive
-              </span>
+              <small>Inactive</small>
             )}
           </p>
         </div>
