@@ -1,11 +1,14 @@
 "use client";
 import useRLStore from "@/app/lib/store";
+import { useEffect } from "react";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import TimeAgo from "react-timeago";
 import styles from "../../ui/dashboard/tenancies/tenancies.module.css";
 const page = () => {
-  const { tenancies } = useRLStore((state) => state);
-
+  const { tenancies, getTenancies } = useRLStore((state) => state);
+  useEffect(() => {
+    getTenancies();
+  }, []);
   //on reload data
 
   return (
