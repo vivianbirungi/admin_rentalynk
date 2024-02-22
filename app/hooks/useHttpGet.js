@@ -30,10 +30,8 @@ export const useHttpPost = (url, data, id = null) =>{
     const postData = async()=>{
         try {
         const res = await axios.post(url, data);
-        console.log('User created:', response.data);
         // Handle success, e.g., redirect to user profile page
       } catch (error) {
-        console.error('Error creating user:', error.message);
         // Handle error, e.g., display an error message to the user
       }
       finally{

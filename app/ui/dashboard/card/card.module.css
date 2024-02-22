@@ -1,31 +1,51 @@
-.container{
-    background: var(--bgSoft);
-    padding:20px;
-    border-radius: 10px;
-    display: flex;
-    gap:20px;
-    cursor:pointer;
-    width: 100%;
+.cardsBox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  color:#fff;
+  gap:20px;
+  margin-bottom: 30px;
 }
-.container:hover{
-    background: #2e374a;
+
+.card {
+  flex:1;
+  padding:16px;
+  background-color:var(--bgSoft);
+  border-radius: var(--borderRadius);
+  transition: 300ms ease-in-out;
 }
-.texts{
-    display: flex;
-    flex-direction: column;
-    gap:20px
+
+.card:hover{
+  transform: scale(1.1);
+  background-color: var(--bg);
 }
-.number{
-    font-size: 24px;
-    font-weight: 500;
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
-.detail{
-    font-style: 14px;
-    font-weight: 300;
+
+.cardFooter {
+  display: flex;
+  justify-content: space-around;
 }
-.positive{
-    color: lime
+
+.cardFooter div {
+  flex:1;
+  display: flex; 
+  flex-direction: column;
 }
-.negative{
-    color:red
+
+.cardFooter div h2 {
+font-weight: lighter;
+font-size: 19px;
+margin-bottom: 2px;
 }
+
+
+.cardFooter div small {
+  font-weight: bold;
+  font-size: 10px;
+  }

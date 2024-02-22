@@ -1,5 +1,5 @@
 .message{
-    border-radius: 10px;
+    border-radius: var(--borderRadius);
     background-color: var(--bg);
 }
 .button{

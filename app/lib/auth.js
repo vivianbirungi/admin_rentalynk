@@ -1,14 +1,6 @@
-import instance from '../../../config';
+import instance from "../../config";
 
-const login = async user => {
-  console.log(JSON.stringify(user));
-    const response = await instance.post(
-      'authenticationservice/mobileLogin',
-      JSON.stringify(user),
-    );
-    return response.data;
-  };
-
-export default {login};
-
-
+export const login_user_api = async (user) => {
+  const response = await instance.post("login", JSON.stringify(user));
+  return response.data;
+};

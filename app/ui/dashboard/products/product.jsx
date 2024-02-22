@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { MdDelete, MdEdit } from "react-icons/md";
 import styles from "./products.module.css";
 import { getImages } from "../../../lib/utilties";
 import useRLStore from "../../../lib/store";
@@ -22,6 +21,7 @@ const Property = ({ productData }) => {
           width={180}
           height={200}
           alt="productImage"
+          style={{ marginRight: 10, aspectRatio: 1, borderRadius: 5 }}
         />
       ) : (
         <Image
@@ -30,30 +30,26 @@ const Property = ({ productData }) => {
           width={180}
           height={200}
           alt="productImage"
+          style={{ marginRight: 10, aspectRatio: 1, borderRadius: 5 }}
         />
       )}
 
       <div className={styles.content}>
         <div className={styles.productDetail}>
-          <small style={{ textTransform: "uppercase" }}>
-            {productData?.pro_type}
+          <small>{productData?.pro_type}</small>
+          <p className={styles.header}>{productData?.pro_title}</p>
+          <small className={styles.price}>
+            {productData?.total_units} Units
           </small>
-          <h2 className={styles.header} style={{ textTransform: "capitalize" }}>
-            {productData?.pro_title}
-          </h2>
-          <span className={styles.owner}>{productData?.full_name}</span>
-          <span className={styles.price}>{productData?.total_units} Units</span>
+          <br />
+          <small className={styles.owner}>By {productData?.full_name}</small>
         </div>
         <div>
           <p>
             {productData?.subscription_active === "Y" ? (
-              <span style={{ color: "lime", fontWeight: "bold", fontSize: 13 }}>
-                Active
-              </span>
+              <small>Active</small>
             ) : (
-              <span style={{ color: "red", fontWeight: "bold", fontSize: 13 }}>
-                Inactive
-              </span>
+              <small>Inactive</small>
             )}
           </p>
         </div>

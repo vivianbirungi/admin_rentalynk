@@ -19,7 +19,6 @@ const SingleProductPage = () => {
       router.push("/dashboard/property");
       alert("Property has been deleted");
     } catch (error) {
-      console.log(error.message);
     }
   };
 
@@ -33,7 +32,7 @@ const SingleProductPage = () => {
                 src={image}
                 height={250}
                 width={250}
-                style={{ marginRight: 10, aspectRatio: 1 }}
+                style={{ marginRight: 10, aspectRatio: 1, borderRadius: 10 }}
               />
             ) : (
               <Image
@@ -52,7 +51,7 @@ const SingleProductPage = () => {
       <div className="section prodDetails">
         <div>
           <h2>{activeProperty?.pro_title}</h2>
-          <p>{`${activeProperty?.pro_type} in ${activeProperty?.location_name}` }</p>
+          <p>{`${activeProperty?.pro_type} in ${activeProperty?.location_name}`}</p>
         </div>
 
         <div>
@@ -117,10 +116,12 @@ const SingleProductPage = () => {
       </div>
 
       <div className="section">
-        <h3>Amenties</h3>
+        <h3>Amenities</h3>
         <div className="section_row">
           {activeProperty?.amenities.split(",").map((amenity) => (
-            <span>{amenity}</span>
+            <span>
+              <small>{amenity}</small>
+            </span>
           ))}
         </div>
       </div>
