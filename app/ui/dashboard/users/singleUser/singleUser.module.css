@@ -2,22 +2,23 @@
   display: flex;
   margin-top: 20px;
 }
-.detailsContainer{
- width: 70%;
+.detailsContainer {
+  width: 70%;
 }
 .infoContainer {
   display: flex;
-  width:100%;
+  width: 100%;
   gap: 30px;
   padding: 20px;
   color: #555;
-
 }
 
 .imgContainer {
   position: relative;
   border-radius: var(--borderRadius);
   overflow: hidden;
+  width: 200px;
+  height: 200px;
   margin-bottom: 20px;
   margin-right: 20px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -52,7 +53,6 @@
   color: rgb(93, 93, 93);
 }
 
-
 .bookingContainer {
   flex: 1;
   display: flex;
@@ -62,14 +62,11 @@
   gap: 20px;
 }
 
-
 .propertyContainer {
   flex: 1;
   border-radius: var(--borderRadius);
   padding: 20px;
   /* box-shadow: rgba(149, 157, 165, 0.2) 0px 6px 20px; */
-  
-
 }
 .tendanciesContainer {
   background-color: var(--bg);
@@ -78,8 +75,6 @@
   padding: 20px;
 }
 /* Table.module.css */
-
-
 
 /* Add more styles as needed */
 
@@ -134,7 +129,6 @@
 }
 .tabactive {
   background: var(--orange);
-
 }
 .tabbody {
   padding-top: 50px;
@@ -168,21 +162,22 @@
 .booking_status {
   text-align: end;
 }
-.formMainContainer { 
+.formMainContainer {
   width: 30%;
 }
-.formBody{
-
+.formBody {
   display: flex;
-  align-items: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   padding-left: 10px;
   padding-right: 10px;
   width: 100%;
-  height:80vh;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-
+  height: max-content;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+.smallAvatar {
+  display: none;
 }
 
 /* 
@@ -214,3 +209,21 @@
     cursor: pointer;
     margin-top: 20px;
   } */
+@media only screen and (max-width: 900px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .detailsContainer {
+    width: 100%;
+  }
+  .formMainContainer {
+    width: 100%;
+  }
+  .imgContainer {
+    display: none;
+  }
+  .formBody {
+    height: max-content;
+  }
+}

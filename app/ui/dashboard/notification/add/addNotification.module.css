@@ -1,13 +1,21 @@
-.message{
+.message, .inputField{
     border-radius: var(--borderRadius);
-    background-color: var(--bg);
+    background-color: rgba(238, 237, 237, 0.804);
+    border:none;
+    padding:5px
+
 }
 .button{
+    width:max-content;
     border-radius: 5px;
-    padding: 7px;
+    padding: 10px;
+    background: var(--orange);
+    color: white;
+    border:none
 }
 .container{
-    width:100%
+    width:100%;
+    color:#000;
 }
 .formContainer{
     width:100%;
@@ -19,3 +27,22 @@
 .select_dropdown {
     width: 100% !important;
 }
+.header{
+    color: rgb(93, 93, 93);
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.form_field{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+.inputField{
+    height: 40px;
+    border-radius: var(--borderRadius);
+}
+  /* reset input */
+  /* .form__field{
+    &:required,&:invalid { box-shadow:none; }
+  } */
+  

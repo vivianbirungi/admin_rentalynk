@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import Avatar from "react-avatar";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
-import TimeAgo from 'react-timeago';
+import TimeAgo from "react-timeago";
 import useRLStore from "../../lib/store";
 import Pagination from "../../ui/dashboard/pagination/pagination";
 import Search from "../../ui/dashboard/search/search";
@@ -97,7 +97,10 @@ const UsersPage = () => {
         </thead>
         <tbody>
           {entries.map((user) => (
-            <tr key={user.user_id}>
+            <tr
+              key={user.user_id}
+              onClick={() => handleViewUser(user.user_id, user.user_type)}
+            >
               <td>
                 <div className={styles.user}>
                   <Avatar size="48" name={user?.full_name} round={true} />

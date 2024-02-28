@@ -3,9 +3,14 @@ import TimeAgo from "react-timeago";
 import useRLStore from "../../../lib/store";
 import styles from "./transaction.module.css";
 const Transaction = () => {
-  const { properties, subscriptions, searchesMade, bookings } = useRLStore(
-    (state) => state
-  );
+  const {
+    properties,
+    subscriptions,
+    searchesMade,
+    bookings,
+    setActiveUser,
+    setActiveProperty,
+  } = useRLStore((state) => state);
   const latest_properties = properties.slice(-4);
   const latest_subscription = subscriptions.slice(-3);
   return (
@@ -48,7 +53,12 @@ const Transaction = () => {
           <tbody>
             {latest_properties.map((myProperty) => (
               <>
-                <tr className={styles.hr}>
+                <tr
+                  className={styles.hr}
+                  onClick={() => {
+                    setActiveProperty(myProperty.property_id);
+                  }}
+                >
                   {myProperty.images && (
                     <td>
                       <img

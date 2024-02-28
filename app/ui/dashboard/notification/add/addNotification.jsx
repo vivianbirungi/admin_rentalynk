@@ -1,34 +1,36 @@
 import { useState } from "react";
-import SelectItem from "../../select/select";
 import styles from "./addNotification.module.css";
 const AddNotification = () => {
   const [type, setType] = useState("landlord");
   const [message, setMessage] = useState("");
   return (
     <div className={styles.container}>
+      <div>
+        <span className={styles.header}>Create Post</span>
+      </div>
       <form className={styles.formContainer}>
-        <SelectItem
-          selectedValue={type}
-          values={["landlord", "tenant"]}
-          handleSelect={(e) => {
-            setType(e);
-          }}
-        />
-
-        <SelectItem
-          selectedValue={type}
-          values={["User1", "User2"]}
-          handleSelect={(e) => {
-            setType(e);
-          }}
-        />
-
+        <div class={styles.form_field}>
+          <label for="name" class={styles.form_label}>
+            Subject
+          </label>
+          <input
+            type="input"
+            class={styles.inputField}
+            placeholder=""
+            name="name"
+            id="name"
+            required
+          />
+        </div>
+        <label for="name" class={styles.form_label}>
+          Message
+        </label>
         <textarea
           className={styles.message}
           value={message}
-          placeholder=" Message"
+          placeholder="Write a text"
           onChange={(e) => setMessage(e.target.value)}
-          rows={4} // Adjust the number of rows as needed
+          rows={10} // Adjust the number of rows as needed
         />
 
         <button className={styles.button} type="submit">
