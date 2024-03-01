@@ -23,7 +23,10 @@ const Products = () => {
   useEffect(() => {
     getProperties();
   }, []);
-
+  const handleViewUser = (id) => {
+    setActiveProperty(id);
+    router.push("/dashboard/property/property");
+  };
   return (
     <div className={styles.container}>
       <div className={styles.top}>
@@ -36,10 +39,11 @@ const Products = () => {
       {/* {JSON.stringify(entries)} */}
       <div className={styles.properties}>
         {entries.map((property) => (
-          <div className={styles.single}>
-            <Link href={`/dashboard/property/property`}>
-              <Product productData={property} />
-            </Link>
+          <div
+            className={styles.single}
+            onClick={() => handleViewUser(property.property_id)}
+          >
+            <Product productData={property} />
           </div>
         ))}
       </div>

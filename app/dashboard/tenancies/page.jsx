@@ -9,7 +9,6 @@ const page = () => {
   useEffect(() => {
     getTenancies();
   }, []);
-  //on reload data
 
   return (
     <div className={styles.container}>
@@ -20,7 +19,6 @@ const page = () => {
             <td className="hidden">Property</td>
             <td className="hidden">Contract</td>
             <td className="hidden">Status</td>
-            <td>Action</td>
           </tr>
         </thead>
         <tbody>
@@ -45,17 +43,7 @@ const page = () => {
                 )}
               </td>
               <td className="hidden">
-                {tenancy?.subscription_active ? "Active" : "NO"}
-              </td>
-              <td>
-                <div className={styles.buttons}>
-                  <button
-                    className={`${styles.button} ${styles.view}`}
-                    onClick={() => handleViewUser(user.user_id, user.user_type)}
-                  >
-                    <MdOutlineRemoveRedEye size={20} />
-                  </button>
-                </div>
+                {tenancy?.is_terminated === "yes" ? "Active" : "Terminated"}
               </td>
             </tr>
           ))}

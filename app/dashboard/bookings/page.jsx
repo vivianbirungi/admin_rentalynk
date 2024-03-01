@@ -18,7 +18,6 @@ const page = () => {
               <td className="hidden">Payment</td>
               <td className="hidden">Message</td>
               <td className="hidden">Booking</td>
-              <td>Action</td>
             </tr>
           </thead>
           <tbody>
@@ -51,9 +50,7 @@ const page = () => {
                     </small>
                   </td>
 
-                  <td>
-                    <button className={styles.button}>Action</button>
-                  </td>
+                
                 </tr>
               </>
             ))}

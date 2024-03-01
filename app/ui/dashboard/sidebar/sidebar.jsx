@@ -55,6 +55,11 @@ const rolesLinks = {
           icon: <MdWork />,
         },
         {
+          title: "Search Results",
+          path: "/dashboard/searches",
+          icon: <MdWork />,
+        },
+        {
           title: "Tenancies",
           path: "/dashboard/tenancies",
           icon: <MdAnalytics />,
