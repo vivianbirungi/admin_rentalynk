@@ -73,9 +73,9 @@ const SingleUserPage = () => {
               <span>{activeUser?.isverified}</span>
             </div>
             <div className={styles.userInfo}>
-              <div>
+              {/* <div>
                 <span>Role: </span> <span>{activeUser?.user_type}</span>
-              </div>
+              </div> */}
               <div>
                 <span>Email:</span> <span> {activeUser?.email}</span>
               </div>

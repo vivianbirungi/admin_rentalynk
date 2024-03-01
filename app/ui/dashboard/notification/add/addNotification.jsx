@@ -33,6 +33,7 @@ const AddNotification = () => {
       setLoading(false);
     } catch (error) {}
   };
+  
   return (
     <div className={styles.container}>
       <div>

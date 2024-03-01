@@ -41,8 +41,8 @@ const useRLStore = create(
 
       getSearchesMade: async () => {
         const results = await instance.get(`get_searches_made`);
-
-        set((state) => ({ ...state, searchesMade: results.data }));
+        console.log({results})
+        set((state) => ({ ...state, searchesMade: results.data.results }));
       },
 
       getSubscriptions: async () => {

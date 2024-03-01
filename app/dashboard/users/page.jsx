@@ -54,6 +54,7 @@ const UsersPage = () => {
       getTenants();
     }
   };
+
   useEffect(() => {
     // users.getData();
 
@@ -64,10 +65,12 @@ const UsersPage = () => {
   const handlePagination = (e) => {
     setCurrentPage(e);
   };
+
   const handleViewUser = (id, type) => {
     setActiveUser(id, type);
     router.push("/dashboard/users/user");
   };
+  
   return (
     <div className={styles.container}>
       <div className={styles.top}>

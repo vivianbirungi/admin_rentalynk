@@ -101,6 +101,9 @@ a {
 table {
   width: 100%;
   border-collapse: collapse;
+  /* border:1px solid #aaa; */
+  margin-top: 14px;
+  /* border-radius: var(--borderRadius); */
 }
 
 table th,
