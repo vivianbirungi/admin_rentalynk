@@ -181,7 +181,7 @@ const SingleUserPage = () => {
                       ) : (
                         <div className={styles.tendanciesContainer}>
                           <h4>Subscriptions</h4>
-                          <table className={styles.table}>
+                          <table>
                             <tbody>
                               {subscriptions.map((subscription) => (
                                 <tr>

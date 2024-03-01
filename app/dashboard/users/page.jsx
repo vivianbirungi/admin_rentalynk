@@ -2,7 +2,6 @@
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import Avatar from "react-avatar";
-import { MdOutlineRemoveRedEye } from "react-icons/md";
 import TimeAgo from "react-timeago";
 import useRLStore from "../../lib/store";
 import Pagination from "../../ui/dashboard/pagination/pagination";
@@ -70,19 +69,21 @@ const UsersPage = () => {
     router.push("/dashboard/users/user");
   };
   return (
-    <div
-      className={styles.container}
-      onClick={() => handleViewUser(user.user_id, user.user_type)}
-    >
+    <div className={styles.container}>
       <div className={styles.top}>
-        <SelectItem
-          selectedValue={type}
-          values={["landlord", "tenant"]}
-          handleSelect={(e) => {
-            setType(e);
-          }}
-        />
-        <Search placeholder="Search for a user..." onSearch={handleSearch} />
+        <div>
+          {" "}
+          <SelectItem
+            selectedValue={type}
+            values={["landlord", "tenant"]}
+            handleSelect={(e) => {
+              setType(e);
+            }}
+          />
+        </div>
+        <div>
+          <Search placeholder="Search for a user..." onSearch={handleSearch} />
+        </div>
       </div>
 
       <table className={styles.table}>
@@ -92,14 +93,13 @@ const UsersPage = () => {
             <td className="hidden">Email</td>
             <td className="hidden">Created At</td>
             <td className="hidden">Status</td>
-            <td>Action</td>
           </tr>
         </thead>
         <tbody>
           {entries.map((user) => (
             <tr
               key={user.user_id}
-              onClick={() => handleViewUser(user.user_id, user.user_type)}
+              onClick={() => handleViewUser(user?.user_id, user?.user_type)}
             >
               <td>
                 <div className={styles.user}>
@@ -114,16 +114,6 @@ const UsersPage = () => {
               </td>
               <td className="hidden">
                 {user?.isVerified == "Y" ? "YES" : "NO"}
-              </td>
-              <td>
-                <div className={styles.buttons}>
-                  <button
-                    className={`${styles.button} ${styles.view}`}
-                    onClick={() => handleViewUser(user.user_id, user.user_type)}
-                  >
-                    <MdOutlineRemoveRedEye size={20} />
-                  </button>
-                </div>
               </td>
             </tr>
           ))}
