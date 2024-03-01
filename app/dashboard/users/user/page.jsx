@@ -15,7 +15,6 @@ const SingleUserPage = () => {
   const myProperties = properties.filter(
     (property) => property?.landlord_id === activeUser?.user_id
   );
-  console.log({ myProperties });
   const [currentPage, setCurrentPage] = useState(1);
   const [activeTab, setActiveTab] = useState(0);
   const [subscriptions, setSubscriptions] = useState([]);
@@ -34,14 +33,12 @@ const SingleUserPage = () => {
     const response = await instance.get(
       `get_user_bookings/${activeUser?.user_id}`
     );
-    console.log(response);
     setBookings(response.data.results);
   };
   const getUserTenancies = async () => {
     const response = await instance.get(
       `get_user_bookings/${activeUser?.user_id}`
     );
-    console.log(response);
     setBookings(response.data.results);
   };
   const handlePagination = (e) => {

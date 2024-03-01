@@ -65,16 +65,15 @@
   padding: 10px;
   margin-top: 10px;
   border-radius: var(--borderRadius);
-  color:#555;
+  color: #555;
   background-color: #eee;
   transition: 300ms ease-in-out;
 }
 
 .propertyContainer:hover {
   background-color: var(--orange);
-  color:#fff;
+  color: #fff;
 }
-
 
 .content {
   flex: 3;
@@ -121,14 +120,13 @@
   font-size: 9px;
 }
 
-.productDetail .header{
+.productDetail .header {
   width: 100%;
   overflow: hidden;
   display: inline-block;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-
 
 .list {
   display: flex;

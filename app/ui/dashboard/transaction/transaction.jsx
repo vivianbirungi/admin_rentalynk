@@ -14,7 +14,6 @@ const Transaction = () => {
   const latest_properties = properties.slice(-4);
   const latest_subscription = subscriptions.slice(-3);
 
-  console.log({ searchesMade });
   return (
     <div className={styles.gridList}>
       {latest_subscription.length > 0 && (
