@@ -108,11 +108,11 @@ const Transaction = () => {
               {searchesMade?.slice(0, 5)?.map((search) => (
                 <tr>
                   <td className="hidden">
-                    <b>{search?.pro_type}</b>
+                    <b>{search?.pro_type||"N/A"}</b>
                     <br />
                     <small>{search?.full_name}</small>
                   </td>
-                  <td className="hidden">{search?.location}</td>
+                  <td className="hidden">{search?.location||"N/A"}</td>
                   <td className="hidden">{search?.rent_fees} UGX</td>
                 </tr>
               ))}
