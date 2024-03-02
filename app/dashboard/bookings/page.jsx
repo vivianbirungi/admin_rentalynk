@@ -1,5 +1,5 @@
 "use client";
-import useRLStore from "@/app/lib/store";
+import useRLStore from "../../lib/store";
 import { useEffect } from "react";
 import Timeago from "react-timeago";
 import styles from "../../ui/dashboard/bookings/bookings.module.css";
