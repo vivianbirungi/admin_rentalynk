@@ -1,5 +1,5 @@
 "use client";
-import useRLStore from "@/app/lib/store";
+import useRLStore from "../../lib/store";
 import TimeAgo from "react-timeago";
 import styles from "../../ui/dashboard/tenancies/tenancies.module.css";
 import { useEffect } from "react";

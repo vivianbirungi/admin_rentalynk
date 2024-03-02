@@ -60,12 +60,11 @@ const SingleProductPage = () => {
           </button>
         </div>
       </div>
-      <br />
 
       <div className="section section_row stats">
         <div>
           {activeProperty?.subscription_active ? (
-            <AiFillCheckCircle color="lime" />
+            <AiFillCheckCircle color="teal" />
           ) : (
             <AiFillCloseCircle color="red" size={30} />
           )}
@@ -74,7 +73,7 @@ const SingleProductPage = () => {
 
         <div>
           {activeProperty?.multiple_units ? (
-            <AiFillCheckCircle color="lime" />
+            <AiFillCheckCircle color="teal" />
           ) : (
             <AiFillCloseCircle color="red" />
           )}
@@ -83,7 +82,7 @@ const SingleProductPage = () => {
 
         <div>
           {activeProperty?.isRentedOut ? (
-            <AiFillCheckCircle color="lime" />
+            <AiFillCheckCircle color="teal" />
           ) : (
             <AiFillCloseCircle color="red" />
           )}
@@ -94,45 +93,63 @@ const SingleProductPage = () => {
           {activeProperty?.deleted ? (
             <AiFillCheckCircle color="red" />
           ) : (
-            <AiFillCloseCircle color="lime" />
+            <AiFillCloseCircle color="teal" />
           )}
           <small>Property Unlisted</small>
         </div>
       </div>
 
       <div className="section">
-        <h3>Landlord Details</h3>
+        <h4>Landlord Details</h4>
+        <br />
         <p>{activeProperty?.full_name}</p>
+        <small>
+          Email :{" "}
+          <b>{` ${activeProperty?.country_code}${activeProperty?.phone}`}</b>
+        </small>
         <br />
         <small>
-          {`${activeProperty?.country_code}${activeProperty?.phone}`} |{" "}
-          {activeProperty?.email}
+          Phone: <b>{activeProperty?.email}</b>
         </small>
       </div>
 
       <div className="section">
-        <h3>Description</h3>
+        <h4>Description</h4>
+        <br />
         <p>{activeProperty?.description}</p>
       </div>
 
       <div className="section">
-        <h3>Amenities</h3>
+        <h4>Amenities</h4>
+        <br />
         <div className="section_row">
           {activeProperty?.amenities.split(",").map((amenity) => (
             <span>
-              <small>{amenity}</small>
+              <small style={{ color: "teal" }}>{amenity}</small>
             </span>
           ))}
         </div>
       </div>
 
       <div className="section">
-        <h3>Prices and Units</h3>
-        <div>
+        <h4>Prices and Units</h4>
+        <br />
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 10,
+            flexDirection: "row",
+          }}
+        >
           {activeProperty?.units.map((unit) => (
-            <div className="unit_price">
-              <h3>{unit?.unit_name}</h3>
-              <p>{`${unit?.rent_fees} ${unit?.currency}`}</p>
+            <div className="unit_price" style={{ flex: 1 }}>
+              <small>{unit?.unit_name}</small>
+              <br />
+
+              <small style={{ color: "teal" }}>
+                <b>{`${unit?.rent_fees} ${unit?.currency}`}</b>
+              </small>
             </div>
           ))}
         </div>
