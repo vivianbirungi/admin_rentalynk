@@ -6,27 +6,36 @@ import Pagination from "../../ui/dashboard/pagination/pagination";
 import Product from "../../ui/dashboard/products/product";
 import styles from "../../ui/dashboard/products/products.module.css";
 import Search from "../../ui/dashboard/search/search";
+import { useRouter } from "next/navigation";
+
+
 const Products = () => {
   const [currentPage, setCurrentPage] = useState(1);
+  const router = useRouter();
 
   const start = (Number(currentPage) - 1) * 100;
-
   const end = start + 100;
-
-  const { properties, getProperties } = useRLStore((state) => state);
+  const { properties, getProperties, setActiveProperty } = useRLStore(
+    (state) => state
+  );
 
   const entries = Array.isArray(properties) ? properties.slice(start, end) : [];
 
   const handlePagination = (e) => {
     setCurrentPage(e);
   };
+
   useEffect(() => {
     getProperties();
   }, []);
+
+
   const handleViewUser = (id) => {
     setActiveProperty(id);
     router.push("/dashboard/property/property");
   };
+
+
   return (
     <div className={styles.container}>
       <div className={styles.top}>
@@ -36,10 +45,10 @@ const Products = () => {
         </Link>
       </div>
 
-      {/* {JSON.stringify(entries)} */}
       <div className={styles.properties}>
-        {entries.map((property) => (
+        {entries?.map((property, index) => (
           <div
+            key={index}
             className={styles.single}
             onClick={() => handleViewUser(property.property_id)}
           >

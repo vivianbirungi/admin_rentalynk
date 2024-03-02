@@ -2,14 +2,13 @@ import { MdHomeWork, MdSupervisedUserCircle } from "react-icons/md";
 import { useMemo } from "react";
 import moment from "moment";
 import styles from "./card.module.css";
-import useRLStore from "@/app/lib/store";
+import useRLStore from "../../../lib/store";
 
 const Cards = () => {
   const { landLords, tenants, properties, tenancies, bookings } = useRLStore(
     (state) => state
   );
 
-  console.log({ tenants, landLords });
 
   const ListedProperties = useMemo(() => {
     return properties.filter((val) => val.deleted === "N");

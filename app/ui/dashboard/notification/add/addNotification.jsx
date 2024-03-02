@@ -24,7 +24,6 @@ const AddNotification = () => {
         full_name: activeUser.full_name,
       };
       const result = await notify_user(payload);
-      console.log({ result });
       if (result.flag) {
         router.push("/dashboard");
       } else {
