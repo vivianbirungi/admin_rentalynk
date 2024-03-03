@@ -3,11 +3,17 @@ import TimeAgo from "react-timeago";
 import useRLStore from "../../../lib/store";
 import styles from "./transaction.module.css";
 const Transaction = () => {
-  const { properties, subscriptions, searchesMade, bookings } = useRLStore(
-    (state) => state
-  );
+  const {
+    properties,
+    subscriptions,
+    searchesMade,
+    bookings,
+    setActiveUser,
+    setActiveProperty,
+  } = useRLStore((state) => state);
   const latest_properties = properties.slice(-4);
   const latest_subscription = subscriptions.slice(-3);
+
   return (
     <div className={styles.gridList}>
       {latest_subscription.length > 0 && (
@@ -46,9 +52,14 @@ const Transaction = () => {
         </div>
         <table>
           <tbody>
-            {latest_properties.map((myProperty) => (
+            {latest_properties?.map((myProperty) => (
               <>
-                <tr className={styles.hr}>
+                <tr
+                  className={styles.hr}
+                  onClick={() => {
+                    setActiveProperty(myProperty.property_id);
+                  }}
+                >
                   {myProperty.images && (
                     <td>
                       <img
@@ -79,7 +90,7 @@ const Transaction = () => {
         </table>
       </div>
 
-      {searchesMade.length > 0 && (
+      {searchesMade?.length > 0 && (
         <div className={styles.container}>
           <div className={styles.cardHeading}>
             <h2 className={styles.title}>Top 5 searches</h2>
@@ -93,11 +104,15 @@ const Transaction = () => {
               </tr>
             </thead>
             <tbody>
-              {searchesMade?.map((search) => (
+              {searchesMade?.slice(0, 5)?.map((search) => (
                 <tr>
-                  <td className="hidden">{search.pro_type}</td>
-                  <td className="hidden">{search.location}</td>
-                  <td className="hidden">{search.rent_fees} Ugx</td>
+                  <td className="hidden">
+                    <b>{search?.pro_type||"N/A"}</b>
+                    <br />
+                    <small>{search?.full_name}</small>
+                  </td>
+                  <td className="hidden">{search?.location||"N/A"}</td>
+                  <td className="hidden">{search?.rent_fees} UGX</td>
                 </tr>
               ))}
             </tbody>

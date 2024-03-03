@@ -1,16 +1,17 @@
 .container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background-color: var(--orange);
-    padding: 10px;
-    border-radius: var(--borderRadius);
-    width: max-content;
-  }
-  
-  .input {
-    background-color: transparent;
-    border: none;
-    color: var(--text);
-    outline: none;
-  }
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: var(--borderRadius);
+  border: 1px solid #eee;
+  padding-left: 5px;
+  width: max-content;
+}
+
+.input {
+  height: 40px;
+  background-color: transparent;
+  color: black;
+  border: none;
+  outline: none;
+}

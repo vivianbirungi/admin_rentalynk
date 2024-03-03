@@ -1,29 +1,80 @@
+"use client";
 import { useState } from "react";
-import SelectItem from '../../select/select';
-import styles from './addNotification.module.css';
-const AddNotification = () => {
-    const [type, setType]= useState('landlord');
-  const [message, setMessage] = useState('');
-  return (
-    <div>
-       <form className={styles.formContainer} >
-       
-          <SelectItem selectedValue={type} values={['landlord','tenant']} handleSelect={(e)=>{setType(e)}}/>
-         
-          <SelectItem selectedValue={type} values={['User1','User2']} handleSelect={(e)=>{setType(e)}}/>
-          
-          <textarea
-            className={styles.message}
-            value={message}
-            placeholder=" Message"
-            onChange={(e) => setMessage(e.target.value)}
-            rows={4} // Adjust the number of rows as needed
-          />
-     
-      <button className={styles.button} type="submit">Send Message</button>
-        </form>
-    </div>
-  )
-}
+import useRLStore from "../../../../lib/store";
+import { notify_user } from "../../../../lib/users";
+import Loader from "../../../loader/Loader";
+import styles from "./addNotification.module.css";
 
-export default AddNotification
+const AddNotification = () => {
+  const [type, setType] = useState("landlord");
+  const [message, setMessage] = useState("");
+  const { activeUser } = useRLStore((state) => state);
+  const [loading, setLoading] = useState(false);
+  const [subject, setSubject] = useState("");
+
+  const send_message = async () => {
+    try {
+      setLoading(true);
+      const payload = {
+        one_signal_id: activeUser.one_signal_id,
+        subject: subject,
+        message: message,
+        phone: `${activeUser.country_code}${activeUser.phone}`,
+        email: activeUser.email,
+        full_name: activeUser.full_name,
+      };
+      const result = await notify_user(payload);
+      if (result.flag) {
+        router.push("/dashboard");
+      } else {
+        toast.error("Email or password is wrong.");
+      }
+      setLoading(false);
+    } catch (error) {}
+  };
+
+  return (
+    <div className={styles.container}>
+      <div>
+        <span className={styles.header}>Create Post</span>
+      </div>
+      <form className={styles.formContainer}>
+        <div class={styles.form_field}>
+          <label for="name" class={styles.form_label}>
+            Subject
+          </label>
+          <input
+            type="input"
+            class={styles.inputField}
+            placeholder=""
+            name="name"
+            id="name"
+            onChange={(e) => setSubject(e.target.value)}
+            required
+          />
+        </div>
+        <label for="name" class={styles.form_label}>
+          Message
+        </label>
+        <textarea
+          className={styles.message}
+          value={message}
+          placeholder="Write a text"
+          onChange={(e) => setMessage(e.target.value)}
+          rows={10} // Adjust the number of rows as needed
+        />
+
+        {loading ? (
+          <Loader />
+        ) : (
+          <button className={styles.button} onClick={send_message}>
+            {" "}
+            Login
+          </button>
+        )}
+      </form>
+    </div>
+  );
+};
+
+export default AddNotification;

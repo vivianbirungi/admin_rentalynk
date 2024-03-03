@@ -55,6 +55,11 @@ const rolesLinks = {
           icon: <MdWork />,
         },
         {
+          title: "Search Results",
+          path: "/dashboard/searches",
+          icon: <MdWork />,
+        },
+        {
           title: "Tenancies",
           path: "/dashboard/tenancies",
           icon: <MdAnalytics />,
@@ -68,18 +73,7 @@ const rolesLinks = {
     },
     {
       title: "User",
-      list: [
-        {
-          title: "Settings",
-          path: "/dashboard/settings",
-          icon: <MdOutlineSettings />,
-        },
-        {
-          title: "Help",
-          path: "/dashboard/help",
-          icon: <MdHelpCenter />,
-        },
-      ],
+      list: [],
     },
   ],
   manager: [
@@ -225,6 +219,7 @@ const Sidebar = () => {
         {rolesLinks[user?.role]?.map((item) => (
           <li key={item.title}>
             <span className={styles.cat}>{item.title}</span>
+            <br />
             {item.list.map((listItem) => (
               <MenuLink item={listItem} key={listItem.title} />
             ))}

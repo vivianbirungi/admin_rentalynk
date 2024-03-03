@@ -1,12 +1,12 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 import secureLocalStorage from "react-secure-storage";
 import { toast } from "react-toastify";
-import styles from "./loginForm.module.css";
-import { useState } from "react";
-import { login_user_api } from "@/app/lib/auth";
+import { login_user_api } from "../../../lib/auth";
 import Loader from "../../loader/Loader";
+import styles from "./loginForm.module.css";
 
 const LoginForm = () => {
   const router = useRouter();
@@ -26,8 +26,7 @@ const LoginForm = () => {
         toast.error("Email or password is wrong.");
       }
       setLoading(false);
-    } catch (error) {
-    }
+    } catch (error) {}
   };
 
   return (

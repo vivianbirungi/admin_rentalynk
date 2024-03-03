@@ -1,13 +1,12 @@
-import instance from '../../../config';
+import instance from '../../config';
 
-const login = async user => {
-    const response = await instance.post(
-      'authenticationservice/mobileLogin',
-      JSON.stringify(user),
-    );
+
+  export const notify_user = async (message) => {
+    
+    const response = await instance.post("send_message", JSON.stringify(message));
     return response.data;
   };
+  
 
-export default {login};
 
 

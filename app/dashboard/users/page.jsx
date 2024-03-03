@@ -2,8 +2,7 @@
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import Avatar from "react-avatar";
-import { MdOutlineRemoveRedEye } from "react-icons/md";
-import TimeAgo from 'react-timeago';
+import TimeAgo from "react-timeago";
 import useRLStore from "../../lib/store";
 import Pagination from "../../ui/dashboard/pagination/pagination";
 import Search from "../../ui/dashboard/search/search";
@@ -14,6 +13,7 @@ const UsersPage = () => {
   // const per_page = searchParams['per_page'] ?? '5';
   const [type, setType] = useState("landlord");
   const [currentPage, setCurrentPage] = useState(1);
+  const [searchResults, setSearchResults] = useState([]);
   const start = (Number(currentPage) - 1) * 10;
   const end = start + 10;
   const router = useRouter();
@@ -24,28 +24,24 @@ const UsersPage = () => {
   const entries =
     type === "landlord"
       ? Array.isArray(landLords.results)
-        ? landLords?.results.slice(start, end)
+        ? searchResults.length > 0
+          ? searchResults.slice(start, end)
+          : landLords.results.slice(start, end)
         : []
       : Array.isArray(tenants?.results)
-      ? tenants.results?.slice(start, end)
+      ? searchResults.length > 0
+        ? searchResults.slice(start, end)
+        : tenants.results?.slice(start, end)
       : [];
-  const [filteredData, setFilteredData] = useState(
-    type === "landlord"
-      ? Array.isArray(landLords.results)
-        ? landLords?.results.slice(start, end)
-        : []
-      : Array.isArray(tenants?.results)
-      ? tenants.results?.slice(start, end)
-      : []
-  );
 
-  const handleSearch = (searchTerm) => {
-    const filtered = entries.filter((item) =>
-      Object.values(item).some((value) =>
-        value.toLowerCase().includes(searchTerm.toLowerCase())
-      )
+  const handleSearch = (searchQuery) => {
+    // Filter the data based on the search query
+    const data = type === "landlord" ? landLords?.results : tenants?.results;
+
+    const filteredResults = data?.filter((item) =>
+      item.full_name.toLowerCase().includes(searchQuery.toLowerCase())
     );
-    setFilteredData(filtered);
+    setSearchResults(filteredResults);
   };
 
   const getUsers = () => {
@@ -55,34 +51,36 @@ const UsersPage = () => {
       getTenants();
     }
   };
-  useEffect(() => {
-    // users.getData();
 
+  useEffect(() => {
     getUsers();
-    setFilteredData(entries);
   }, [type]);
 
   const handlePagination = (e) => {
     setCurrentPage(e);
   };
+
   const handleViewUser = (id, type) => {
     setActiveUser(id, type);
     router.push("/dashboard/users/user");
   };
+
   return (
-    <div
-      className={styles.container}
-      onClick={() => handleViewUser(user.user_id, user.user_type)}
-    >
+    <div className={styles.container}>
       <div className={styles.top}>
-        <SelectItem
-          selectedValue={type}
-          values={["landlord", "tenant"]}
-          handleSelect={(e) => {
-            setType(e);
-          }}
-        />
-        <Search placeholder="Search for a user..." onSearch={handleSearch} />
+        <div>
+          {" "}
+          <SelectItem
+            selectedValue={type}
+            values={["landlord", "tenant"]}
+            handleSelect={(e) => {
+              setType(e);
+            }}
+          />
+        </div>
+        <div>
+          <Search placeholder="Search for a user..." onSearch={handleSearch} />
+        </div>
       </div>
 
       <table className={styles.table}>
@@ -92,12 +90,14 @@ const UsersPage = () => {
             <td className="hidden">Email</td>
             <td className="hidden">Created At</td>
             <td className="hidden">Status</td>
-            <td>Action</td>
           </tr>
         </thead>
         <tbody>
           {entries.map((user) => (
-            <tr key={user.user_id}>
+            <tr
+              key={user.user_id}
+              onClick={() => handleViewUser(user?.user_id, user?.user_type)}
+            >
               <td>
                 <div className={styles.user}>
                   <Avatar size="48" name={user?.full_name} round={true} />
@@ -111,16 +111,6 @@ const UsersPage = () => {
               </td>
               <td className="hidden">
                 {user?.isVerified == "Y" ? "YES" : "NO"}
-              </td>
-              <td>
-                <div className={styles.buttons}>
-                  <button
-                    className={`${styles.button} ${styles.view}`}
-                    onClick={() => handleViewUser(user.user_id, user.user_type)}
-                  >
-                    <MdOutlineRemoveRedEye size={20} />
-                  </button>
-                </div>
               </td>
             </tr>
           ))}
