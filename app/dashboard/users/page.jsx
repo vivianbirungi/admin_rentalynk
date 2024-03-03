@@ -14,6 +14,7 @@ const UsersPage = () => {
   const [type, setType] = useState("landlord");
   const [currentPage, setCurrentPage] = useState(1);
   const [searchResults, setSearchResults] = useState([]);
+  const [isUserSearching, setUserSearching] = useState(false);
   const start = (Number(currentPage) - 1) * 10;
   const end = start + 10;
   const router = useRouter();
@@ -24,18 +25,20 @@ const UsersPage = () => {
   const entries =
     type === "landlord"
       ? Array.isArray(landLords.results)
-        ? searchResults.length > 0
+        ? isUserSearching
           ? searchResults.slice(start, end)
           : landLords.results.slice(start, end)
         : []
       : Array.isArray(tenants?.results)
-      ? searchResults.length > 0
+      ? isUserSearching
         ? searchResults.slice(start, end)
         : tenants.results?.slice(start, end)
       : [];
 
   const handleSearch = (searchQuery) => {
     // Filter the data based on the search query
+    if (searchQuery !== "") setUserSearching(true);
+
     const data = type === "landlord" ? landLords?.results : tenants?.results;
 
     const filteredResults = data?.filter((item) =>

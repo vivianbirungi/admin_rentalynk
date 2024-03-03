@@ -13,7 +13,10 @@ const Transaction = () => {
   } = useRLStore((state) => state);
   const latest_properties = properties.slice(-4);
   const latest_subscription = subscriptions.slice(-3);
-
+  const handleViewProperty = (id) => {
+    setActiveProperty(id);
+    router.push("/dashboard/property/property");
+  };
   return (
     <div className={styles.gridList}>
       {latest_subscription.length > 0 && (
@@ -57,7 +60,7 @@ const Transaction = () => {
                 <tr
                   className={styles.hr}
                   onClick={() => {
-                    setActiveProperty(myProperty.property_id);
+                    handleViewProperty(myProperty.property_id);
                   }}
                 >
                   {myProperty.images && (
@@ -107,11 +110,11 @@ const Transaction = () => {
               {searchesMade?.slice(0, 5)?.map((search) => (
                 <tr>
                   <td className="hidden">
-                    <b>{search?.pro_type||"N/A"}</b>
+                    <b>{search?.pro_type || "N/A"}</b>
                     <br />
                     <small>{search?.full_name}</small>
                   </td>
-                  <td className="hidden">{search?.location||"N/A"}</td>
+                  <td className="hidden">{search?.location || "N/A"}</td>
                   <td className="hidden">{search?.rent_fees} UGX</td>
                 </tr>
               ))}

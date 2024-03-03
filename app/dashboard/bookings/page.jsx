@@ -1,16 +1,35 @@
 "use client";
-import useRLStore from "../../lib/store";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Timeago from "react-timeago";
+import useRLStore from "../../lib/store";
 import styles from "../../ui/dashboard/bookings/bookings.module.css";
+import Search from "../../ui/dashboard/search/search";
 const page = () => {
   const { bookings, getBookings, setBooking } = useRLStore((state) => state);
+  const [searchResults, setSearchResults] = useState([]);
+  const [isUserSearching, setUserSearching] = useState(false);
   useEffect(() => {
     getBookings();
   }, []);
+  const bookingData = isUserSearching ? searchResults : bookings;
+  const handleSearch = (searchQuery) => {
+    // Filter the data based on the search query
+    if (searchQuery !== "") setUserSearching(true);
+    const filteredResults = bookings?.filter(
+      (item) =>
+        item.full_name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.pro_title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setSearchResults(filteredResults);
+  };
   return (
     <div>
       <div className={styles.propertyContainer}>
+        <div className={styles.top}>
+          <div>
+            <Search placeholder="Search " onSearch={handleSearch} />
+          </div>
+        </div>
         <table>
           <thead>
             <tr>
@@ -21,7 +40,7 @@ const page = () => {
             </tr>
           </thead>
           <tbody>
-            {bookings.map((booking) => (
+            {bookingData.map((booking) => (
               <>
                 <tr className={styles.hr}>
                   <td>
@@ -31,7 +50,7 @@ const page = () => {
                       {booking?.pro_title}
                     </span>
                   </td>
-                  <td>
+                  <td className="hidden">
                     <span>{booking?.brokerage_fees}</span>
                     <br />
                     <small>{booking?.paid_status}</small>
@@ -49,8 +68,6 @@ const page = () => {
                       <Timeago date={booking?.booked_date} />
                     </small>
                   </td>
-
-                
                 </tr>
               </>
             ))}
