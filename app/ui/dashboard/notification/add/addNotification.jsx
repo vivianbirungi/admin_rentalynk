@@ -1,8 +1,8 @@
 "use client";
-import useRLStore from "@/app/lib/store";
-import { notify_user } from "@/app/lib/users";
-import Loader from "@/app/ui/loader/Loader";
 import { useState } from "react";
+import useRLStore from "../../../../lib/store";
+import { notify_user } from "../../../../lib/users";
+import Loader from "../../../loader/Loader";
 import styles from "./addNotification.module.css";
 
 const AddNotification = () => {
@@ -32,7 +32,7 @@ const AddNotification = () => {
       setLoading(false);
     } catch (error) {}
   };
-  
+
   return (
     <div className={styles.container}>
       <div>

@@ -1,10 +1,10 @@
 "use client";
-import AddNotification from "@/app/ui/dashboard/notification/add/addNotification";
 import { useEffect, useState } from "react";
 import Avatar from "react-avatar";
 import { MdCheckCircle, MdCheckCircleOutline } from "react-icons/md";
 import instance from "../../../../config";
 import useRLStore from "../../../lib/store";
+import AddNotification from "../../../ui/dashboard/notification/add/addNotification";
 import Pagination from "../../../ui/dashboard/pagination/pagination";
 import styles from "../../../ui/dashboard/users/singleUser/singleUser.module.css";
 const SingleUserPage = () => {
@@ -52,6 +52,7 @@ const SingleUserPage = () => {
     setActiveProperty(id);
     router.push("/dashboard/property/property");
   };
+
   return (
     <div className={styles.container}>
       <div className={styles.detailsContainer}>

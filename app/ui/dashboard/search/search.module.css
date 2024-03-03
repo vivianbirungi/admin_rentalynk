@@ -4,14 +4,14 @@
   gap: 10px;
   border-radius: var(--borderRadius);
   border: 1px solid #eee;
-
+  padding-left: 5px;
   width: max-content;
 }
 
 .input {
   height: 40px;
   background-color: transparent;
-  color: var(--text);
+  color: black;
   border: none;
   outline: none;
 }

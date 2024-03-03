@@ -4,7 +4,7 @@ import styles from "./search.module.css";
 const Search = ({ placeholder, onSearch }) => {
   return (
     <div className={styles.container}>
-      <MdSearch fill="" />
+      <MdSearch fill="#d5770a" />
       <input
         type="text"
         placeholder={placeholder}

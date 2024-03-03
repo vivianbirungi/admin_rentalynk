@@ -13,6 +13,7 @@ const UsersPage = () => {
   // const per_page = searchParams['per_page'] ?? '5';
   const [type, setType] = useState("landlord");
   const [currentPage, setCurrentPage] = useState(1);
+  const [searchResults, setSearchResults] = useState([]);
   const start = (Number(currentPage) - 1) * 10;
   const end = start + 10;
   const router = useRouter();
@@ -23,28 +24,24 @@ const UsersPage = () => {
   const entries =
     type === "landlord"
       ? Array.isArray(landLords.results)
-        ? landLords?.results.slice(start, end)
+        ? searchResults.length > 0
+          ? searchResults.slice(start, end)
+          : landLords.results.slice(start, end)
         : []
       : Array.isArray(tenants?.results)
-      ? tenants.results?.slice(start, end)
+      ? searchResults.length > 0
+        ? searchResults.slice(start, end)
+        : tenants.results?.slice(start, end)
       : [];
-  const [filteredData, setFilteredData] = useState(
-    type === "landlord"
-      ? Array.isArray(landLords.results)
-        ? landLords?.results.slice(start, end)
-        : []
-      : Array.isArray(tenants?.results)
-      ? tenants.results?.slice(start, end)
-      : []
-  );
 
-  const handleSearch = (searchTerm) => {
-    const filtered = entries.filter((item) =>
-      Object.values(item).some((value) =>
-        value.toLowerCase().includes(searchTerm.toLowerCase())
-      )
+  const handleSearch = (searchQuery) => {
+    // Filter the data based on the search query
+    const data = type === "landlord" ? landLords?.results : tenants?.results;
+
+    const filteredResults = data?.filter((item) =>
+      item.full_name.toLowerCase().includes(searchQuery.toLowerCase())
     );
-    setFilteredData(filtered);
+    setSearchResults(filteredResults);
   };
 
   const getUsers = () => {
@@ -56,10 +53,7 @@ const UsersPage = () => {
   };
 
   useEffect(() => {
-    // users.getData();
-
     getUsers();
-    setFilteredData(entries);
   }, [type]);
 
   const handlePagination = (e) => {
@@ -70,7 +64,7 @@ const UsersPage = () => {
     setActiveUser(id, type);
     router.push("/dashboard/users/user");
   };
-  
+
   return (
     <div className={styles.container}>
       <div className={styles.top}>

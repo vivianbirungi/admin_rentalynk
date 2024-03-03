@@ -1,9 +1,8 @@
 "use client";
-import useRLStore from "@/app/lib/store";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { AiOutlineStop } from "react-icons/ai";
 import { MdOutlineAutoAwesome, MdOutlineHourglassEmpty } from "react-icons/md";
+import useRLStore from "../../../lib/store";
 import AddNotification from "../notification/add/addNotification";
 import styles from "./rightbar.module.css";
 const Rightbar = () => {
