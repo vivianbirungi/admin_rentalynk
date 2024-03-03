@@ -12,6 +12,7 @@ const Products = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const router = useRouter();
   const [searchResults, setSearchResults] = useState([]);
+  const [isUserSearching, setUserSearching] = useState(false);
   const start = (Number(currentPage) - 1) * 100;
   const end = start + 100;
   const { properties, getProperties, setActiveProperty } = useRLStore(
@@ -19,7 +20,7 @@ const Products = () => {
   );
 
   const entries = Array.isArray(properties) // Assuming "type" can also be "property"
-    ? searchResults.length > 0
+    ? isUserSearching
       ? searchResults.slice(start, end)
       : properties.slice(start, end)
     : [];
@@ -33,13 +34,14 @@ const Products = () => {
     getProperties();
   }, []);
 
-  const handleViewUser = (id) => {
+  const handleViewProperty = (id) => {
     setActiveProperty(id);
     router.push("/dashboard/property/property");
   };
 
   const handleSearch = (searchQuery) => {
     // Filter the data based on the search query
+    if (searchQuery !== "") setUserSearching(true);
 
     const filteredResults = properties?.filter(
       (item) =>
@@ -62,7 +64,7 @@ const Products = () => {
           <div
             key={index}
             className={styles.single}
-            onClick={() => handleViewUser(property.property_id)}
+            onClick={() => handleViewProperty(property.property_id)}
           >
             <Product productData={property} />
           </div>
